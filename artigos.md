@@ -5,12 +5,12 @@
 ---
 
 ## Artigo 1
-- **titulo:** O que muda para médicos e clínicas com a nova resolução do CFM sobre IA
-- **url:** https://substack.com/@marceloblankadv
-- **resumo:** Análise completa dos deveres impostos pela Resolução CFM 2.454/2026: comitê de governança, registro em prontuário e supervisão humana obrigatória.
+- **titulo:** Compliance de IA médica: o que os novos casos internacionais já ensinam ao Brasil
+- **url:** [https://substack.com/@marceloblankadv](https://marceloblank.substack.com/p/compliance-de-ia-medica-o-que-os)
+- **resumo:** A nova onda de litígios em saúde digital mostra que IA médica sem governança não é inovação madura. É risco jurídico, regulatório e reputacional em formação.
 - **imagem:** https://substackcdn.com/image/fetch/placeholder.jpg
 - **data:** Jun 2026
-- **tag:** CFM 2.454/2026
+- **tag:** COMPLIANCE IA MÉDICA
 
 ## Artigo 2
 - **titulo:** Clínicas médicas como controladoras de dados: riscos que a maioria ignora
