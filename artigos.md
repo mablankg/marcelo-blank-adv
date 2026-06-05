@@ -3,8 +3,15 @@
 # Campos: titulo, url, resumo, imagem (URL da imagem do artigo), data
 
 ---
-
 ## Artigo 1
+- **titulo:** O médico e a máquina
+- **url:** https://substack.com/@marceloblank/note/c-271071507
+- **resumo:** A IA não substitui o médico, mas exige que ele use tecnologia com critério, registro e governança para reduzir erros e proteger sua responsabilidade profissional.
+- **imagem:** https://substack.com/@marceloblank/note/c-271071507?utm_source=notes-share-action&r=2gh0v6
+- - **data:** Jun 2026
+- **tag:** NEGÓCIOS IA
+
+## Artigo 2 
 - **titulo:** Compliance de IA médica: o que os novos casos internacionais já ensinam ao Brasil
 - **url:** https://marceloblank.substack.com/p/compliance-de-ia-medica-o-que-os
 - **resumo:** A nova onda de litígios em saúde digital mostra que IA médica sem governança não é inovação madura. É risco jurídico, regulatório e reputacional em formação.
@@ -12,7 +19,7 @@
 - **data:** Jun 2026
 - **tag:** COMPLIANCE IA MÉDICA
 
-## Artigo 2
+## Artigo 3
 - **titulo:** IA na Saúde: Por que o seu maior risco não é o erro do algoritmo (e sim a "amnésia" institucional)
 - **url:** https://marceloblank.substack.com/p/ia-na-saude-por-que-o-seu-maior-risco
 - **resumo:** Confundir disponibilidade de dados com legitimidade de uso: o erro estratégico que transforma inovação tecnológica em passivo jurídico.
@@ -20,7 +27,7 @@
 - **data:** Mai 2026
 - **tag:** IA ALGORITIMO
 
-## Artigo 3
+## Artigo 4
 - **titulo:** A Revolução dos Escritórios de Advocacia AI-Native: quando a inteligência artificial deixa de ser ferramenta e vira modelo de negócio
 - **url:** https://marceloblank.substack.com/p/a-revolucao-dos-escritorios-de-advocacia
 - **resumo:** Arquitetura para a Prática Jurídica Global e o Impacto no Mercado Brasileiro
