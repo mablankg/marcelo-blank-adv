@@ -7,9 +7,9 @@
 - **titulo:** O médico e a máquina
 - **url:** https://substack.com/@marceloblank/note/c-271071507
 - **resumo:** A IA não substitui o médico, mas exige que ele use tecnologia com critério, registro e governança para reduzir erros e proteger sua responsabilidade profissional.
-- **imagem:** https://github.com/mablankg/marcelo-blank-adv/blob/main/images/A_IA_n%C3%A3o_vai_substituir_o_m%C3%A9di.mp4
+- **imagem:** https://github.com/mablankg/marcelo-blank-adv/blob/main/images/medico-maquina.png
 - - **data:** Jun 2026
-- **tag:** IA MÉDICO
+- **tag:** IA MÉDICO 
 
 ## Artigo 2 
 - **titulo:** Compliance de IA médica: o que os novos casos internacionais já ensinam ao Brasil
