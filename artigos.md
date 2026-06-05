@@ -6,9 +6,9 @@
 
 ## Artigo 1
 - **titulo:** Compliance de IA médica: o que os novos casos internacionais já ensinam ao Brasil
-- **url:** [https://substack.com/@marceloblankadv](https://marceloblank.substack.com/p/compliance-de-ia-medica-o-que-os)
+- **url:** https://marceloblank.substack.com/p/compliance-de-ia-medica-o-que-os
 - **resumo:** A nova onda de litígios em saúde digital mostra que IA médica sem governança não é inovação madura. É risco jurídico, regulatório e reputacional em formação.
-- **imagem:** https://substackcdn.com/image/fetch/placeholder.jpg
+- **imagem:** https://substackcdn.com/image/fetch/$s_!gD1_!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ffc30a1d1-4596-4e65-8cce-bb99bf3ae2c7_1672x941.png
 - **data:** Jun 2026
 - **tag:** COMPLIANCE IA MÉDICA
 
