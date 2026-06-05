@@ -21,9 +21,8 @@
 - **tag:** IA ALGORITIMO
 
 ## Artigo 3
-- **titulo:** Quando o médico responde por erro do algoritmo — e quando não responde
-- **url:** https://substack.com/@marceloblankadv
-- **resumo:** A linha entre supervisão humana adequada e delegação indevida à IA é o critério decisivo para responsabilidade civil em saúde digital.
-- **imagem:** https://substackcdn.com/image/fetch/placeholder.jpg
-- **data:** Mai 2026
-- **tag:** Responsabilidade Civil
+- **titulo:** A Revolução dos Escritórios de Advocacia AI-Native: quando a inteligência artificial deixa de ser ferramenta e vira modelo de negócio
+- **url:** https://marceloblank.substack.com/p/a-revolucao-dos-escritorios-de-advocacia
+- **resumo:** Arquitetura para a Prática Jurídica Global e o Impacto no Mercado Brasileiro
+- **imagem:** https://substackcdn.com/image/fetch/$s_!iFO3!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fea53efe2-5852-4b81-a35b-ac6884c6988c_1672x941.png)- **data:** Mai 2026
+- **tag:** NEGÓCIOS IA
