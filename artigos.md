@@ -7,7 +7,7 @@
 - **titulo:** O medico, o chatbot e a pergunta contaminada
 - **url:** [https://substack.com/@marceloblank/note/c-271071507](https://marceloblank.substack.com/p/o-medico-o-chatbot-e-a-pergunta-contaminada)
 - **resumo:** Quando a IA responde bem, mas responde errado.
-- **imagem:** [/images/medico-maquina.png](https://substackcdn.com/image/fetch/$s_!PdKc!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F513c6cbb-a54f-4055-be57-90e7b944ef2f_2816x1536.png)
+- **imagem:** https://substackcdn.com/image/fetch/$s_!PdKc!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F513c6cbb-a54f-4055-be57-90e7b944ef2f_2816x1536.png
 - **data:** Jun 2026
 - **tag:** CHATBOT IA MÉDICO 
 
