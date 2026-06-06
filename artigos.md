@@ -4,16 +4,16 @@
 
 ---
 ## Artigo 1
-- **titulo:** O medico, o chatbot e a pergunta contaminada
-- **url:** [https://substack.com/@marceloblank/note/c-271071507](https://marceloblank.substack.com/p/o-medico-o-chatbot-e-a-pergunta-contaminada)
-- **resumo:** Quando a IA responde bem, mas responde errado.
-- **imagem:** https://substackcdn.com/image/fetch/$s_!PdKc!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F513c6cbb-a54f-4055-be57-90e7b944ef2f_2816x1536.png
+- **titulo:** O médico sênior que não confia na IA, e por que ele tem razão em pedir mais do que tecnologia
+- **url:** https://substack.com/@marceloblank/note/c-271071507](https://marceloblank.substack.com/p/o-medico-o-chatbot-e-a-pergunta-contaminada
+- **resumo:** Um estudo com 498 médicos deixou claro: o problema não está na resistência. Está na ausência de estrutura. E esse é exatamente o espaço onde o direito precisa aparecer.
+- **imagem:** https://substackcdn.com/image/fetch/$s_!TdXv!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc158343d-a604-4800-b144-78e42cf1a79c_3168x1344.png
 - **data:** Jun 2026
-- **tag:** CHATBOT IA MÉDICO 
+- **tag:** DIAGNÓSTICO RESISTÊNCIA IA
 
 ## Artigo 2 
 - **titulo:** Compliance de IA médica: o que os novos casos internacionais já ensinam ao Brasil
-- **url:** https://marceloblank.substack.com/p/compliance-de-ia-medica-o-que-os
+- **url:** https://marceloblank.substack.com/p/o-medico-senior-que-nao-confia-na
 - **resumo:** A nova onda de litígios em saúde digital mostra que IA médica sem governança não é inovação madura. É risco jurídico, regulatório e reputacional em formação.
 - **imagem:** https://substackcdn.com/image/fetch/$s_!gD1_!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ffc30a1d1-4596-4e65-8cce-bb99bf3ae2c7_1672x941.png
 - **data:** Jun 2026
