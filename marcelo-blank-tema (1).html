@@ -1,0 +1,1139 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marcelo Blank Advogado | Direito Médico, IA e Governança Clínica</title>
+<meta name="description" content="Assessoria jurídica para médicos, clínicas e healthtechs. IA, LGPD, CFM, prontuário e contratos de tecnologia. OAB/SP 498.835.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════════════
+   TOKENS — DARK (padrão)
+═══════════════════════════════════════════════ */
+:root,
+[data-theme="dark"] {
+  --bg0:      #030d18;
+  --bg1:      #061526;
+  --bg2:      #091e34;
+  --card:     #0b2240;
+  --card2:    #0e2a4e;
+  --line:     rgba(32,200,255,.13);
+  --line2:    rgba(32,200,255,.26);
+  --accent:   #1ec8ff;
+  --accent2:  #5de0ff;
+  --text:     #eef6fc;
+  --muted:    #9bbdd4;
+  --soft:     #6a8fa8;
+  --nav-bg:   rgba(3,13,24,.92);
+  --shadow:   0 4px 28px rgba(0,0,0,.45);
+  --grid-ln:  rgba(30,200,255,.04);
+
+  /* botão principal */
+  --btn-bg:   linear-gradient(135deg,#1ec8ff,#09a8db);
+  --btn-txt:  #021525;
+
+  /* hero stats strip */
+  --hstrip:   rgba(11,34,64,.6);
+
+  /* risco cards */
+  --risco-bg: #061526;
+  --risco-hv: #0b2240;
+
+  /* oferta */
+  --oferta-main: #061526;
+  --oferta-side: #0b2240;
+
+  /* expertise */
+  --exp-card: #0b2240;
+  --exp-foto: linear-gradient(160deg,#0e2a44,#061626);
+
+  /* faq */
+  --faq-bg:   #061526;
+  --faq-cta:  #0b2240;
+
+  /* contato */
+  --canal-hv: rgba(30,200,255,.05);
+
+  /* fecha banner */
+  --fecha-bg: linear-gradient(135deg,rgba(30,200,255,.10),rgba(30,200,255,.04));
+  --fecha-bd: rgba(30,200,255,.22);
+
+  /* footer */
+  --footer-bg:#030d18;
+
+  /* toggle switch */
+  --toggle-track: rgba(30,200,255,.18);
+  --toggle-knob:  #1ec8ff;
+  --toggle-icon-show: "☀️";
+  --toggle-ring: rgba(30,200,255,.25);
+}
+
+/* ═══════════════════════════════════════════════
+   TOKENS — LIGHT
+═══════════════════════════════════════════════ */
+[data-theme="light"] {
+  --bg0:      #f0f6fc;
+  --bg1:      #ffffff;
+  --bg2:      #e8f2fa;
+  --card:     #ffffff;
+  --card2:    #f4f9fd;
+  --line:     rgba(10,90,140,.12);
+  --line2:    rgba(10,90,140,.24);
+  --accent:   #0a7abf;
+  --accent2:  #0864a0;
+  --text:     #0d1f30;
+  --muted:    #3a5a78;
+  --soft:     #7a9ab5;
+  --nav-bg:   rgba(240,246,252,.95);
+  --shadow:   0 4px 28px rgba(10,60,110,.12);
+  --grid-ln:  rgba(10,90,140,.04);
+
+  --btn-bg:   linear-gradient(135deg,#0a7abf,#065f96);
+  --btn-txt:  #ffffff;
+
+  --hstrip:   rgba(255,255,255,.85);
+  --risco-bg: #ffffff;
+  --risco-hv: #e8f2fa;
+  --oferta-main: #ffffff;
+  --oferta-side: #e8f2fa;
+  --exp-card: #ffffff;
+  --exp-foto: linear-gradient(160deg,#c8dff0,#e0eff9);
+  --faq-bg:   #ffffff;
+  --faq-cta:  #e8f2fa;
+  --canal-hv: rgba(10,90,140,.05);
+  --fecha-bg: linear-gradient(135deg,rgba(10,122,191,.08),rgba(10,122,191,.03));
+  --fecha-bd: rgba(10,122,191,.2);
+  --footer-bg:#e0ecf7;
+  --toggle-track: rgba(10,90,140,.15);
+  --toggle-knob:  #0a7abf;
+  --toggle-ring: rgba(10,122,191,.22);
+}
+
+/* ═══════════════════════════════════════════════
+   BASE
+═══════════════════════════════════════════════ */
+*, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
+html { scroll-behavior:smooth; }
+body {
+  font-family:'Plus Jakarta Sans',system-ui,sans-serif;
+  background:var(--bg0);
+  color:var(--text);
+  font-size:18px;
+  line-height:1.68;
+  -webkit-font-smoothing:antialiased;
+  transition:background .35s ease, color .35s ease;
+}
+a { text-decoration:none; color:inherit; }
+img { display:block; max-width:100%; }
+
+/* ── TOGGLE TEMA ── */
+.theme-toggle {
+  position:relative;
+  width:60px; height:32px;
+  cursor:pointer;
+  flex-shrink:0;
+}
+.theme-toggle input {
+  opacity:0; width:0; height:0; position:absolute;
+}
+.toggle-track {
+  position:absolute; inset:0;
+  background:var(--toggle-track);
+  border:1px solid var(--line2);
+  border-radius:999px;
+  transition:background .3s, border-color .3s;
+  display:flex; align-items:center;
+  padding:0 4px;
+  justify-content:space-between;
+}
+.toggle-icon {
+  font-size:13px; line-height:1;
+  user-select:none; z-index:1;
+  transition:opacity .3s;
+}
+.toggle-knob {
+  position:absolute;
+  width:24px; height:24px;
+  border-radius:50%;
+  background:var(--toggle-knob);
+  top:3px; left:4px;
+  transition:transform .3s cubic-bezier(.4,0,.2,1), background .3s;
+  box-shadow:0 2px 8px var(--toggle-ring);
+}
+[data-theme="light"] .toggle-knob {
+  transform:translateX(28px);
+}
+.toggle-track:hover { border-color:var(--accent); }
+
+/* ── NAV ── */
+nav {
+  position:sticky; top:0; z-index:99;
+  background:var(--nav-bg);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--line);
+  transition:background .35s, border-color .35s;
+}
+.nav-i {
+  max-width:1180px; margin:0 auto;
+  padding:0 24px; height:72px;
+  display:flex; align-items:center; justify-content:space-between; gap:16px;
+}
+.brand { display:flex; flex-direction:column; gap:2px; text-decoration:none; }
+.brand-name {
+  font-size:1.12rem; font-weight:800;
+  color:var(--text); letter-spacing:-.02em;
+  transition:color .3s;
+}
+.brand-sub {
+  font-size:.7rem; font-weight:600;
+  letter-spacing:.14em; text-transform:uppercase;
+  color:var(--accent); transition:color .3s;
+}
+.nav-links { display:flex; gap:24px; list-style:none; }
+.nav-links a {
+  font-size:.85rem; font-weight:600;
+  color:var(--muted); letter-spacing:.04em;
+  transition:color .2s;
+}
+.nav-links a:hover { color:var(--accent2); }
+.nav-right { display:flex; align-items:center; gap:12px; }
+.btn-wa {
+  display:inline-flex; align-items:center; gap:8px;
+  background:var(--accent); color:var(--btn-txt);
+  font-weight:800; font-size:.8rem;
+  letter-spacing:.06em; text-transform:uppercase;
+  padding:.55rem 1.3rem; border-radius:10px;
+  transition:background .2s, transform .15s, color .3s;
+  white-space:nowrap;
+}
+[data-theme="light"] .btn-wa { color:#fff; }
+.btn-wa:hover { filter:brightness(1.1); transform:translateY(-1px); }
+.btn-wa svg { width:15px; height:15px; fill:currentColor; flex-shrink:0; }
+.menu-btn {
+  display:none; background:none;
+  border:1px solid var(--line2);
+  color:var(--text); width:42px; height:42px;
+  border-radius:8px; font-size:1.2rem;
+  cursor:pointer; align-items:center; justify-content:center;
+  transition:border-color .3s, color .3s;
+}
+.mob-nav {
+  display:none; flex-direction:column; gap:4px;
+  padding:12px 24px 20px;
+  border-top:1px solid var(--line);
+  background:var(--bg1);
+  transition:background .35s;
+}
+.mob-nav.open { display:flex; }
+.mob-nav a {
+  padding:12px 16px; border-radius:10px;
+  border:1px solid var(--line);
+  color:var(--muted); font-size:.95rem; font-weight:600;
+  transition:color .3s, border-color .3s;
+}
+
+/* ── HERO ── */
+#hero {
+  min-height:90vh; display:flex; align-items:center;
+  padding:80px 24px 60px;
+  background:var(--bg0);
+  position:relative; overflow:hidden;
+  transition:background .35s;
+}
+#hero::before {
+  content:''; position:absolute; inset:0;
+  background-image:
+    linear-gradient(var(--grid-ln) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-ln) 1px, transparent 1px);
+  background-size:64px 64px;
+  pointer-events:none;
+  transition:background-image .35s;
+}
+#hero::after {
+  content:''; position:absolute;
+  top:-10%; right:-5%; width:55%; height:80%;
+  background:radial-gradient(ellipse, rgba(30,200,255,.07) 0%, transparent 65%);
+  pointer-events:none;
+}
+[data-theme="light"] #hero::after {
+  background:radial-gradient(ellipse, rgba(10,122,191,.06) 0%, transparent 65%);
+}
+.hero-i { max-width:900px; margin:0 auto; position:relative; z-index:1; }
+.eyebrow {
+  display:inline-flex; align-items:center; gap:8px;
+  font-size:.72rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase;
+  color:var(--accent); margin-bottom:28px;
+  transition:color .3s;
+}
+.eyebrow::before { content:''; width:28px; height:1px; background:var(--accent); }
+.hero-h1 {
+  font-size:clamp(2.4rem,5vw,4rem);
+  font-weight:800; line-height:1.06; letter-spacing:-.03em;
+  color:var(--text); margin-bottom:24px;
+  transition:color .3s;
+}
+.hero-h1 em { color:var(--accent); font-style:normal; }
+.hero-sub {
+  font-size:1.12rem; color:var(--muted);
+  max-width:680px; line-height:1.75; margin-bottom:40px;
+  transition:color .3s;
+}
+.hero-btns { display:flex; gap:14px; flex-wrap:wrap; }
+.btn-main {
+  display:inline-flex; align-items:center; gap:10px;
+  background:var(--btn-bg); color:var(--btn-txt);
+  font-weight:800; font-size:.88rem;
+  letter-spacing:.05em; text-transform:uppercase;
+  padding:.85rem 1.9rem; border-radius:12px;
+  box-shadow:0 8px 28px rgba(30,200,255,.2);
+  transition:all .25s;
+}
+[data-theme="light"] .btn-main {
+  box-shadow:0 8px 28px rgba(10,90,140,.18);
+}
+.btn-main:hover { transform:translateY(-2px); filter:brightness(1.08); }
+.btn-main svg { width:18px; height:18px; fill:currentColor; }
+.btn-out {
+  display:inline-flex; align-items:center; gap:8px;
+  border:1px solid var(--line2); color:var(--text);
+  font-weight:600; font-size:.88rem;
+  padding:.85rem 1.9rem; border-radius:12px;
+  background:rgba(255,255,255,.02);
+  transition:all .25s;
+}
+[data-theme="light"] .btn-out { background:rgba(10,90,140,.04); }
+.btn-out:hover { border-color:var(--accent); color:var(--accent); }
+.hero-stats {
+  display:flex; gap:0; margin-top:52px;
+  border:1px solid var(--line); border-radius:14px;
+  overflow:hidden; background:var(--hstrip);
+  backdrop-filter:blur(8px);
+  transition:background .35s, border-color .35s;
+}
+.hstat {
+  flex:1; padding:22px 24px;
+  border-right:1px solid var(--line);
+  transition:border-color .35s;
+}
+.hstat:last-child { border-right:none; }
+.hstat-val {
+  font-size:1.85rem; font-weight:800;
+  color:var(--accent); letter-spacing:-.03em; line-height:1;
+  margin-bottom:6px; transition:color .3s;
+}
+.hstat-lbl { font-size:.9rem; color:var(--muted); line-height:1.5; transition:color .3s; }
+
+/* ── SECTION BASE ── */
+.sec { padding:80px 24px; transition:background .35s; }
+.sec-i { max-width:1180px; margin:0 auto; }
+.sec-label {
+  font-size:.7rem; font-weight:700; letter-spacing:.2em;
+  text-transform:uppercase; color:var(--accent);
+  display:flex; align-items:center; gap:8px; margin-bottom:14px;
+  transition:color .3s;
+}
+.sec-label::before { content:''; width:24px; height:1px; background:var(--accent); }
+.sec-h2 {
+  font-size:clamp(1.75rem,3vw,2.5rem); font-weight:800;
+  letter-spacing:-.03em; line-height:1.12;
+  color:var(--text); margin-bottom:14px;
+  transition:color .3s;
+}
+.sec-sub {
+  font-size:1.05rem; color:var(--muted);
+  max-width:640px; line-height:1.75;
+  transition:color .3s;
+}
+.sec-dark { background:var(--bg1); }
+.sec-mid  { background:var(--bg2); }
+
+/* ── PERGUNTA CENTRAL ── */
+#pergunta { padding:64px 24px; background:var(--bg1); }
+.pergunta-i { max-width:860px; margin:0 auto; text-align:center; }
+.pergunta-i blockquote {
+  font-size:clamp(1.3rem,2.6vw,1.9rem); font-weight:700;
+  color:var(--text); line-height:1.35; letter-spacing:-.02em;
+  margin-bottom:20px; transition:color .3s;
+}
+.pergunta-i blockquote em { color:var(--accent); font-style:normal; }
+.pergunta-i p {
+  font-size:1.05rem; color:var(--muted);
+  line-height:1.75; max-width:640px; margin:0 auto;
+  transition:color .3s;
+}
+
+/* ── RISCOS ── */
+#riscos { background:var(--bg0); }
+.riscos-grid {
+  display:grid; grid-template-columns:repeat(3,1fr);
+  gap:2px; background:var(--line);
+  border:1px solid var(--line); margin-top:44px;
+  transition:background .35s, border-color .35s;
+}
+.risco {
+  background:var(--risco-bg); padding:28px 24px;
+  transition:background .25s;
+}
+.risco:hover { background:var(--risco-hv); }
+.risco-n {
+  font-size:.7rem; font-weight:700; letter-spacing:.15em;
+  color:var(--accent); margin-bottom:14px;
+  display:flex; align-items:center; gap:6px;
+  transition:color .3s;
+}
+.risco-n::after { content:''; flex:1; height:1px; background:var(--line2); }
+.risco h3 {
+  font-size:1.06rem; font-weight:700; color:var(--text);
+  line-height:1.3; margin-bottom:8px; transition:color .3s;
+}
+.risco p { font-size:.96rem; color:var(--muted); line-height:1.65; transition:color .3s; }
+.riscos-cta {
+  margin-top:32px; display:flex; align-items:center;
+  gap:16px; flex-wrap:wrap;
+}
+.riscos-cta p { font-size:1rem; color:var(--muted); transition:color .3s; }
+
+/* ── OFERTA ── */
+#oferta { background:var(--bg2); }
+.oferta-wrap {
+  max-width:1180px; margin:36px auto 0;
+  display:grid; grid-template-columns:1.4fr 1fr;
+  gap:2px; background:var(--line);
+  border:1px solid var(--line2);
+  transition:background .35s, border-color .35s;
+}
+.oferta-main {
+  background:var(--oferta-main); padding:40px;
+  transition:background .35s;
+}
+.oferta-tag {
+  display:inline-block;
+  background:rgba(30,200,255,.1); border:1px solid var(--line2);
+  color:var(--accent); font-size:.72rem; font-weight:700;
+  letter-spacing:.15em; text-transform:uppercase;
+  padding:.35rem .9rem; border-radius:6px; margin-bottom:20px;
+  transition:background .3s, color .3s, border-color .3s;
+}
+[data-theme="light"] .oferta-tag { background:rgba(10,90,140,.08); }
+.oferta-main h2 {
+  font-size:clamp(1.5rem,2.5vw,2.1rem); font-weight:800;
+  letter-spacing:-.03em; color:var(--text);
+  margin-bottom:12px; line-height:1.15; transition:color .3s;
+}
+.oferta-main > p { font-size:1rem; color:var(--muted); line-height:1.75; margin-bottom:28px; transition:color .3s; }
+.steps {
+  display:flex; gap:0; border:1px solid var(--line);
+  border-radius:10px; overflow:hidden;
+  transition:border-color .35s;
+}
+.step {
+  flex:1; padding:18px 14px; text-align:center;
+  border-right:1px solid var(--line);
+  transition:border-color .35s;
+}
+.step:last-child { border-right:none; }
+.step-ico { font-size:1.4rem; margin-bottom:6px; }
+.step-lbl {
+  font-size:.84rem; font-weight:600;
+  color:var(--muted); line-height:1.3; transition:color .3s;
+}
+.oferta-side {
+  background:var(--oferta-side); padding:40px;
+  display:flex; flex-direction:column;
+  justify-content:space-between; gap:28px;
+  transition:background .35s;
+}
+.oferta-prazo {
+  font-size:.72rem; font-weight:700; letter-spacing:.14em;
+  text-transform:uppercase; color:var(--accent);
+  border-bottom:1px solid var(--line); padding-bottom:14px; margin-bottom:14px;
+  transition:color .3s, border-color .35s;
+}
+.oferta-side p { font-size:1rem; color:var(--muted); line-height:1.7; transition:color .3s; }
+
+/* ── EXPERTISE ── */
+#expertise { background:var(--bg1); }
+.expertise-grid {
+  display:grid; grid-template-columns:320px 1fr;
+  gap:40px; align-items:start; margin-top:44px;
+}
+.expert-card {
+  background:var(--exp-card); border:1px solid var(--line);
+  padding:32px; transition:background .35s, border-color .35s;
+}
+.expert-foto {
+  width:100%; aspect-ratio:3/4;
+  background:var(--exp-foto);
+  border:1px solid var(--line2); border-radius:8px;
+  display:flex; align-items:center; justify-content:center;
+  font-size:.8rem; color:var(--soft); letter-spacing:.06em;
+  text-transform:uppercase; margin-bottom:20px;
+  overflow:hidden; transition:border-color .35s;
+}
+.expert-foto img { width:100%; height:100%; object-fit:cover; object-position:top; }
+.expert-name { font-size:1.2rem; font-weight:800; color:var(--text); margin-bottom:4px; transition:color .3s; }
+.expert-oab {
+  font-size:.78rem; color:var(--accent); font-weight:600;
+  letter-spacing:.08em; margin-bottom:16px; transition:color .3s;
+}
+.expert-creds { display:flex; flex-direction:column; gap:8px; }
+.cred {
+  display:flex; align-items:center; gap:8px;
+  font-size:.92rem; color:var(--muted);
+  padding-bottom:8px; border-bottom:1px solid var(--line);
+  transition:color .3s, border-color .35s;
+}
+.cred:last-child { border-bottom:none; padding-bottom:0; }
+.cred::before { content:'✓'; color:var(--accent); font-weight:700; flex-shrink:0; }
+.expert-text h3 {
+  font-size:1.55rem; font-weight:800; letter-spacing:-.03em;
+  color:var(--text); line-height:1.15; margin-bottom:16px; transition:color .3s;
+}
+.expert-text > p {
+  font-size:1rem; color:var(--muted); line-height:1.78;
+  margin-bottom:20px; transition:color .3s;
+}
+.expert-quote {
+  border-left:3px solid var(--accent);
+  padding:16px 20px;
+  background:rgba(30,200,255,.05);
+  font-size:1rem; color:var(--text); line-height:1.7;
+  font-style:italic; margin-bottom:28px;
+  transition:color .3s, border-color .3s, background .35s;
+}
+[data-theme="light"] .expert-quote { background:rgba(10,90,140,.05); }
+.producao { display:flex; flex-direction:column; gap:12px; margin-bottom:28px; }
+.prod-item {
+  display:flex; align-items:flex-start; gap:14px;
+  background:var(--bg2); border:1px solid var(--line);
+  padding:16px; transition:background .35s, border-color .35s;
+}
+.prod-ico {
+  width:40px; height:40px; flex-shrink:0;
+  background:rgba(30,200,255,.08); border:1px solid var(--line2);
+  border-radius:8px; display:flex; align-items:center; justify-content:center;
+  font-size:1.1rem; transition:background .35s, border-color .35s;
+}
+[data-theme="light"] .prod-ico { background:rgba(10,90,140,.07); }
+.prod-tipo {
+  font-size:.65rem; font-weight:700; letter-spacing:.18em;
+  text-transform:uppercase; color:var(--accent);
+  margin-bottom:3px; transition:color .3s;
+}
+.prod-titulo { font-size:.95rem; font-weight:600; color:var(--text); line-height:1.35; transition:color .3s; }
+.prod-sub { font-size:.8rem; color:var(--soft); margin-top:2px; transition:color .3s; }
+.comp-tags { display:flex; flex-wrap:wrap; gap:8px; }
+.ctag {
+  font-size:.83rem; font-weight:600;
+  border:1px solid var(--line2); color:var(--muted);
+  padding:.3rem .8rem; border-radius:6px;
+  transition:border-color .2s, color .2s;
+}
+.ctag:hover { border-color:var(--accent); color:var(--accent2); }
+
+/* ── FAQ ── */
+#faq { background:var(--bg2); }
+.faq-cols {
+  display:grid; grid-template-columns:1fr 1fr;
+  gap:40px; align-items:start; margin-top:44px;
+}
+.faq-list { display:flex; flex-direction:column; gap:2px; }
+.faq-item {
+  border:1px solid var(--line);
+  background:var(--faq-bg);
+  transition:background .35s, border-color .35s;
+}
+.faq-q {
+  width:100%; background:none; border:none;
+  display:flex; align-items:flex-start; justify-content:space-between;
+  gap:14px; padding:20px 22px; cursor:pointer; text-align:left;
+}
+.faq-qtxt { font-size:1rem; font-weight:700; color:var(--text); line-height:1.4; transition:color .3s; }
+.faq-arr { color:var(--accent); font-size:1.3rem; flex-shrink:0; transition:transform .25s, color .3s; margin-top:2px; }
+.faq-item.open .faq-arr { transform:rotate(45deg); }
+.faq-a { max-height:0; overflow:hidden; transition:max-height .35s ease; }
+.faq-item.open .faq-a { max-height:400px; }
+.faq-atxt { padding:0 22px 20px; font-size:1rem; color:var(--muted); line-height:1.75; transition:color .3s; }
+.faq-atxt strong { color:var(--accent2); }
+.faq-cta {
+  background:var(--faq-cta); border:1px solid var(--line2);
+  padding:32px; display:flex; flex-direction:column; gap:20px;
+  position:sticky; top:84px;
+  transition:background .35s, border-color .35s;
+}
+.faq-cta h3 {
+  font-size:1.28rem; font-weight:800; color:var(--text);
+  line-height:1.25; letter-spacing:-.02em; transition:color .3s;
+}
+.faq-cta p { font-size:1rem; color:var(--muted); line-height:1.7; transition:color .3s; }
+.wa-ops { display:flex; flex-direction:column; gap:8px; }
+.wa-op {
+  display:flex; align-items:center; gap:10px;
+  text-decoration:none;
+  background:rgba(30,200,255,.04); border:1px solid var(--line);
+  padding:12px 14px; transition:all .2s;
+}
+[data-theme="light"] .wa-op { background:rgba(10,90,140,.03); }
+.wa-op:hover { background:rgba(30,200,255,.09); border-color:var(--accent); }
+[data-theme="light"] .wa-op:hover { background:rgba(10,90,140,.08); }
+.wa-op-ico { font-size:.95rem; flex-shrink:0; }
+.wa-op-txt strong { display:block; font-size:.85rem; font-weight:700; color:var(--text); line-height:1.2; transition:color .3s; }
+.wa-op-txt span { font-size:.8rem; color:var(--muted); transition:color .3s; }
+.wa-op-arr { color:var(--accent); margin-left:auto; flex-shrink:0; }
+
+/* ── CONTATO ── */
+#contato { background:var(--bg1); }
+.contato-grid {
+  display:grid; grid-template-columns:1fr 1fr;
+  gap:40px; align-items:start; margin-top:44px;
+}
+.contato-canais { display:flex; flex-direction:column; gap:12px; }
+.canal {
+  display:flex; align-items:center; gap:16px;
+  text-decoration:none; border:1px solid var(--line);
+  padding:18px 20px; transition:all .2s;
+}
+.canal:hover { border-color:var(--accent); background:var(--canal-hv); }
+.canal-ico {
+  width:44px; height:44px; flex-shrink:0;
+  border:1px solid var(--line2);
+  display:flex; align-items:center; justify-content:center;
+  font-size:1.2rem; transition:border-color .3s;
+}
+.canal-lbl {
+  font-size:.7rem; font-weight:700; letter-spacing:.12em;
+  text-transform:uppercase; color:var(--soft);
+  margin-bottom:2px; transition:color .3s;
+}
+.canal-val { font-size:1rem; font-weight:700; color:var(--text); transition:color .3s; }
+.canal-sub { font-size:.84rem; color:var(--muted); transition:color .3s; }
+.canal-arr { margin-left:auto; color:var(--accent); font-size:1.1rem; transition:transform .2s, color .3s; }
+.canal:hover .canal-arr { transform:translateX(4px); }
+.contato-desc { font-size:1rem; color:var(--muted); line-height:1.78; margin-bottom:24px; transition:color .3s; }
+
+/* ── BANNER FECHAMENTO ── */
+#fecha {
+  background:var(--fecha-bg);
+  border-top:1px solid var(--fecha-bd);
+  border-bottom:1px solid var(--fecha-bd);
+  padding:64px 24px; text-align:center;
+  transition:background .35s, border-color .35s;
+}
+.fecha-i { max-width:740px; margin:0 auto; }
+.fecha-i h2 {
+  font-size:clamp(1.75rem,3.5vw,2.6rem); font-weight:800;
+  letter-spacing:-.03em; color:var(--text);
+  line-height:1.1; margin-bottom:14px; transition:color .3s;
+}
+.fecha-i p {
+  font-size:1.05rem; color:var(--muted);
+  line-height:1.75; margin-bottom:28px; transition:color .3s;
+}
+.fecha-btns { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
+
+/* ── FOOTER ── */
+footer {
+  background:var(--footer-bg);
+  border-top:1px solid var(--line);
+  padding:44px 24px 32px;
+  transition:background .35s, border-color .35s;
+}
+.footer-i {
+  max-width:1180px; margin:0 auto;
+  display:grid; grid-template-columns:1.5fr 1fr 1fr 1.2fr; gap:32px;
+}
+.footer-brand p { font-size:.92rem; color:var(--muted); line-height:1.6; margin-top:10px; max-width:280px; transition:color .3s; }
+.footer-col-title {
+  font-size:.68rem; font-weight:700; letter-spacing:.18em;
+  text-transform:uppercase; color:var(--accent);
+  margin-bottom:14px; transition:color .3s;
+}
+.footer-links { display:flex; flex-direction:column; gap:8px; }
+.footer-links a, .footer-links span { font-size:.92rem; color:var(--muted); transition:color .2s; }
+.footer-links a:hover { color:var(--accent2); }
+.footer-bar {
+  max-width:1180px; margin:28px auto 0;
+  border-top:1px solid var(--line); padding-top:20px;
+  display:flex; align-items:center; justify-content:space-between;
+  gap:12px; flex-wrap:wrap; transition:border-color .35s;
+}
+.footer-bar p { font-size:.84rem; color:var(--soft); transition:color .3s; }
+
+/* ── WA FLOAT ── */
+.wa-float {
+  position:fixed; bottom:24px; right:24px; z-index:200;
+  display:flex; align-items:center; gap:0; text-decoration:none;
+}
+.wa-label {
+  background:var(--bg1); color:var(--text);
+  font-size:.78rem; font-weight:600;
+  padding:.5rem .9rem;
+  border:1px solid var(--line); border-right:none;
+  white-space:nowrap; opacity:0; transform:translateX(8px);
+  transition:opacity .25s, transform .25s, background .35s, color .35s, border-color .35s;
+  pointer-events:none;
+}
+.wa-float:hover .wa-label { opacity:1; transform:translateX(0); }
+.wa-circle {
+  width:52px; height:52px; border-radius:50%;
+  background:#25D366; display:flex; align-items:center; justify-content:center;
+  box-shadow:0 4px 20px rgba(37,211,102,.35);
+  transition:all .25s; position:relative;
+}
+.wa-float:hover .wa-circle { transform:translateY(-2px); box-shadow:0 8px 28px rgba(37,211,102,.5); }
+.wa-circle::before {
+  content:''; position:absolute; inset:-5px; border-radius:50%;
+  border:2px solid rgba(37,211,102,.35);
+  animation:pulse 2.5s ease-out infinite;
+}
+@keyframes pulse { 0%{opacity:1;transform:scale(1)} 70%{opacity:0;transform:scale(1.3)} 100%{opacity:0} }
+.wa-circle svg { width:26px; height:26px; fill:#fff; }
+
+/* ── REVEAL ── */
+.reveal { opacity:0; transform:translateY(22px); transition:opacity .65s ease, transform .65s ease; }
+.reveal.vis { opacity:1; transform:translateY(0); }
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px) {
+  .nav-links { display:none; }
+  .menu-btn { display:inline-flex; }
+  #riscos .riscos-grid { grid-template-columns:1fr 1fr; }
+  .oferta-wrap { grid-template-columns:1fr; }
+  .expertise-grid { grid-template-columns:1fr; }
+  .faq-cols { grid-template-columns:1fr; }
+  .faq-cta { position:static; }
+  .contato-grid { grid-template-columns:1fr; }
+  .footer-i { grid-template-columns:1fr 1fr; }
+  .hero-stats { flex-direction:column; }
+  .hstat { border-right:none; border-bottom:1px solid var(--line); }
+  .hstat:last-child { border-bottom:none; }
+}
+@media(max-width:600px) {
+  body { font-size:17px; }
+  #riscos .riscos-grid { grid-template-columns:1fr; }
+  .steps { flex-direction:column; }
+  .step { border-right:none; border-bottom:1px solid var(--line); }
+  .step:last-child { border-bottom:none; }
+  .footer-i { grid-template-columns:1fr; }
+  .fecha-btns { flex-direction:column; align-items:center; }
+  .btn-main, .btn-out { justify-content:center; width:100%; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-i">
+    <a href="#hero" class="brand">
+      <span class="brand-name">Marcelo Blank Advogado</span>
+      <span class="brand-sub">Direito Médico e IA</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#riscos">O Risco</a></li>
+      <li><a href="#oferta">Serviços</a></li>
+      <li><a href="#expertise">Expertise</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+    <div class="nav-right">
+      <!-- TOGGLE TEMA -->
+      <label class="theme-toggle" title="Alternar tema claro/escuro" aria-label="Alternar tema">
+        <input type="checkbox" id="themeToggle">
+        <div class="toggle-track">
+          <span class="toggle-icon">☀️</span>
+          <span class="toggle-icon">🌙</span>
+        </div>
+        <div class="toggle-knob"></div>
+      </label>
+      <a href="https://wa.me/5513991299921?text=Olá%2C%20Dr.%20Marcelo.%20Gostaria%20de%20agendar%20minha%20sessão%20de%20diagnóstico%20gratuita." class="btn-wa" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp
+      </a>
+      <button class="menu-btn" id="menuBtn" aria-label="Menu">☰</button>
+    </div>
+  </div>
+  <div class="mob-nav" id="mobNav">
+    <a href="#riscos">O Risco</a>
+    <a href="#oferta">Serviços</a>
+    <a href="#expertise">Expertise</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contato">Contato</a>
+    <a href="https://wa.me/5513991299921" target="_blank" rel="noopener">Falar pelo WhatsApp</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-i">
+    <p class="eyebrow">Advocacia Boutique · Direito Médico Digital e IA</p>
+    <h1 class="hero-h1">Médico que usa IA precisa provar<br><em>supervisão, consentimento</em> e governança.</h1>
+    <p class="hero-sub">Assessoria jurídica para uso seguro de IA, prontuário eletrônico, LGPD e Resolução CFM nº 2.454/2026. Diagnóstico de risco gratuito em 20 minutos.</p>
+    <div class="hero-btns">
+      <a href="https://wa.me/5513991299921?text=Quero%20fazer%20o%20diagnóstico%20de%20risco%20da%20minha%20clínica." class="btn-main" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Diagnóstico gratuito — 20 min
+      </a>
+      <a href="#oferta" class="btn-out">Ver o método →</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hstat">
+        <div class="hstat-val">180 dias</div>
+        <div class="hstat-lbl">Prazo — Resolução CFM nº 2.454/2026</div>
+      </div>
+      <div class="hstat">
+        <div class="hstat-val">R$ 50 mi</div>
+        <div class="hstat-lbl">Teto de multa ANPD · dados sensíveis</div>
+      </div>
+      <div class="hstat">
+        <div class="hstat-val">20 min</div>
+        <div class="hstat-lbl">Para mapear sua exposição real</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PERGUNTA CENTRAL -->
+<section id="pergunta">
+  <div class="pergunta-i reveal">
+    <blockquote>Posso usar IA no consultório sem colocar<br>meu <em>CRM, meu paciente e meu patrimônio</em> em risco?</blockquote>
+    <p>Esta é a pergunta que chega toda semana. A resposta depende de governança — e é exatamente aí que está o vácuo jurídico que mais gera processo, multa e sanção no Brasil em 2026.</p>
+  </div>
+</section>
+
+<!-- RISCOS -->
+<section class="sec" id="riscos">
+  <div class="sec-i">
+    <p class="sec-label">O Risco Real</p>
+    <h2 class="sec-h2">Seis situações que já estão gerando exposição jurídica.</h2>
+    <p class="sec-sub">Cada uma dessas situações é comum, invisível e tratável — antes de virar notificação.</p>
+    <div class="riscos-grid reveal">
+      <div class="risco"><p class="risco-n">01</p><h3>IA de transcrição sem TCLE específico</h3><p>Sem consentimento do paciente e contrato com o fornecedor, você tem exposição à LGPD e ao processo ético no CRM — mesmo que o app seja "famoso".</p></div>
+      <div class="risco"><p class="risco-n">02</p><h3>Software diagnóstico sem matriz de responsabilidade</h3><p>Se o algoritmo sugeriu e você seguiu, quem responde pela falha? Sem documentação do ato médico soberano, a resposta é sempre você.</p></div>
+      <div class="risco"><p class="risco-n">03</p><h3>API estrangeira com dados de pacientes</h3><p>ChatGPT, Claude, Gemini integrados ao fluxo clínico sem cláusula de transferência internacional. Uma das exposições mais comuns e menos percebidas.</p></div>
+      <div class="risco"><p class="risco-n">04</p><h3>Software médico sem enquadramento regulatório</h3><p>Dependendo do uso e da ferramenta, pode haver implicações regulatórias que o médico não foi informado pelo fornecedor.</p></div>
+      <div class="risco"><p class="risco-n">05</p><h3>Contrato de TI que transfere todo risco à clínica</h3><p>Padrão do mercado: fornecedor sem responsabilidade, clínica descoberta. Cláusulas de regresso precisam ser negociadas antes de assinar.</p></div>
+      <div class="risco"><p class="risco-n">06</p><h3>Resolução CFM nº 2.454/2026 ignorada</h3><p>180 dias de prazo. O CFM não notificará individualmente. A obrigação de adequar é do profissional — não do conselho.</p></div>
+    </div>
+    <div class="riscos-cta reveal">
+      <p>Alguma dessas situações descreve a sua realidade?</p>
+      <a href="https://wa.me/5513991299921?text=Quero%20mapear%20os%20riscos%20jurídicos%20do%20uso%20de%20IA%20na%20minha%20clínica." class="btn-main" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Mapear minha exposição
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- OFERTA -->
+<section id="oferta" class="sec sec-mid">
+  <div class="sec-i reveal">
+    <p class="sec-label">Oferta de Entrada</p>
+    <h2 class="sec-h2">Diagnóstico Jurídico de IA Clínica — 7 dias.</h2>
+    <p class="sec-sub">Entrega objetiva para quem quer saber, com clareza, onde está exposto e por onde começar.</p>
+    <div class="oferta-wrap">
+      <div class="oferta-main">
+        <span class="oferta-tag">Produto de Entrada · Escopo Fechado</span>
+        <h2>O que você recebe ao final</h2>
+        <p>Mapeamento das ferramentas usadas, matriz de risco, documentos prioritários e plano de ação — em relatório executivo + reunião estratégica.</p>
+        <div class="steps">
+          <div class="step"><div class="step-ico">🔍</div><div class="step-lbl">Ferramentas analisadas</div></div>
+          <div class="step"><div class="step-ico">⚠️</div><div class="step-lbl">Riscos mapeados</div></div>
+          <div class="step"><div class="step-ico">📄</div><div class="step-lbl">Documentos prioritários</div></div>
+          <div class="step"><div class="step-ico">🗺️</div><div class="step-lbl">Plano de ação 30 dias</div></div>
+        </div>
+      </div>
+      <div class="oferta-side">
+        <div>
+          <p class="oferta-prazo">Prazo · 7 dias corridos</p>
+          <p>Ideal como porta de entrada para clínicas e consultórios que querem clareza antes de contratar uma adequação mais ampla.</p>
+        </div>
+        <a href="https://wa.me/5513991299921?text=Quero%20contratar%20o%20Diagnóstico%20Jurídico%20de%20IA%20Clínica." class="btn-main" target="_blank" rel="noopener" style="justify-content:center">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Quero meu diagnóstico
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERTISE -->
+<section id="expertise" class="sec sec-dark">
+  <div class="sec-i">
+    <p class="sec-label">Expertise</p>
+    <h2 class="sec-h2">Formação rara. Visão técnica e jurídica integrada.</h2>
+    <div class="expertise-grid reveal">
+      <div class="expert-card">
+        <div class="expert-foto">
+          <!-- <img src="marcelo-blank.jpg" alt="Marcelo Blank"> -->
+          foto profissional
+        </div>
+        <p class="expert-name">Marcelo Blank</p>
+        <p class="expert-oab">OAB/SP 498.835</p>
+        <div class="expert-creds">
+          <div class="cred">Direito Médico e Saúde Digital, Compliance e Proteção de Dados - LGPD</div>
+          <div class="cred">Formação em Análise de Sistemas</div>
+          <div class="cred">Pesquisador em IA, Direito Algorítimico e Saúde Digital desde 2023</div>
+          <div class="cred">Marcelo Blank Advocacia — boutique especializado</div>
+          <div class="cred">Atendimento nacional · remoto e presencial</div>
+        </div>
+      </div>
+      <div class="expert-text">
+        <h3>O advogado que entende o que é uma API, um SaMD e um modelo de linguagem.</h3>
+        <p>Atuação na interseção entre medicina, IA, LGPD, governança e contratos de tecnologia — com foco em reduzir risco, proteger reputações e sustentar inovação com segurança jurídica real.</p>
+        <div class="expert-quote">"Comecei a estudar Direito Algorítmico quando a maioria dos advogados ainda achava que o maior risco do consultório era o prontuário em papel. Hoje, esse preparo antecipado é o que diferencia a proteção que ofereço."</div>
+        <div class="producao">
+          <div class="prod-item">
+            <div class="prod-ico">📘</div>
+            <div>
+              <p class="prod-tipo">Livro</p>
+              <p class="prod-titulo">Responsabilidade Civil No Desenvolvimento de softwares</p>
+              <p class="prod-sub">Responsabilidade Civil, LGPD, CFM e Marco Legal da IA no Brasil</p>
+            </div>
+          </div>
+          <div class="prod-item">
+            <div class="prod-ico">🔬</div>
+            <div>
+              <p class="prod-tipo">Artigo Científico</p>
+              <p class="prod-titulo">Direito Médico Digital e Governança de IA na Saúde</p> 
+              <p class="prod-sub">Publicado na Revista Fiocruz - periódico especializado</p>
+            </div>
+          </div>
+        </div>
+        <div class="comp-tags">
+          <span class="ctag">CFM nº 2.454/2026</span>
+          <span class="ctag">LGPD · Dados de Saúde</span>
+          <span class="ctag">SaMD · ANVISA</span>
+          <span class="ctag">Lei 14.784/2023</span>
+          <span class="ctag">Responsabilidade Civil Médica</span>
+          <span class="ctag">Contratos de Software Médico</span>
+          <span class="ctag">RIPD e Governança</span>
+          <span class="ctag">Defesa Ética CFM/CRM</span>
+          <span class="ctag">Healthtechs</span>
+          <span class="ctag">Planos de Saúde · ANS</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ + CTA -->
+<section id="faq" class="sec sec-mid">
+  <div class="sec-i">
+    <p class="sec-label">Perguntas Frequentes</p>
+    <h2 class="sec-h2">O que médicos perguntam antes de contratar.</h2>
+    <div class="faq-cols reveal">
+      <div class="faq-list">
+        <div class="faq-item open">
+          <button class="faq-q" onclick="toggleFaq(this)"><span class="faq-qtxt">Posso usar ChatGPT, Claude ou Gemini com dados de pacientes?</span><span class="faq-arr">+</span></button>
+          <div class="faq-a"><p class="faq-atxt">Depende. Dados de saúde são dados sensíveis. O uso exige base legal, contrato de operador, avaliação da transferência internacional e documentação do processo. <strong>Usar sem avaliação jurídica prévia já configura exposição à LGPD.</strong></p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)"><span class="faq-qtxt">Se a IA errar e houver falha clínica, quem responde?</span><span class="faq-arr">+</span></button>
+          <div class="faq-a"><p class="faq-atxt">Na prática atual, o médico fica no centro. <strong>A proteção está em documentar a soberania do ato médico sobre o algoritmo</strong> — exatamente o que a Matriz de Responsabilidade faz.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)"><span class="faq-qtxt">Meu consultório é pequeno. Preciso realmente disso?</span><span class="faq-arr">+</span></button>
+          <div class="faq-a"><p class="faq-atxt">O CFM e a LGPD não diferenciam pelo porte na hora de aplicar sanções. <strong>O risco é proporcional ao uso — não ao faturamento.</strong></p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)"><span class="faq-qtxt">Já tenho advogado. Por que contratar um especialista em IA?</span><span class="faq-arr">+</span></button>
+          <div class="faq-a"><p class="faq-atxt">Pelo mesmo motivo que você não pede a um clínico geral que faça cirurgia cardíaca. <strong>Raríssimos advogados têm domínio técnico em sistemas combinado com Direito Médico.</strong></p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)"><span class="faq-qtxt">Como funciona o diagnóstico inicial?</span><span class="faq-arr">+</span></button>
+          <div class="faq-a"><p class="faq-atxt">Uma conversa de 20 minutos pelo WhatsApp. Fazemos cinco perguntas sobre os sistemas da clínica e identificamos os principais pontos de exposição. <strong>Sem custo e sem pressão de contratação.</strong></p></div>
+        </div>
+      </div>
+      <div class="faq-cta">
+        <h3>Fale diretamente com o advogado.</h3>
+        <p>Escolha o tema mais urgente. Cada botão abre o WhatsApp com a mensagem certa.</p>
+        <div class="wa-ops">
+          <a href="https://wa.me/5513991299921?text=Dr.%20Marcelo%2C%20uso%20IA%20para%20transcrever%20consultas%20e%20quero%20verificar%20conformidade." class="wa-op" target="_blank" rel="noopener"><span class="wa-op-ico">🎙️</span><div class="wa-op-txt"><strong>IA de transcrição de consultas</strong><span>LGPD + CFM — estou em conformidade?</span></div><span class="wa-op-arr">→</span></a>
+          <a href="https://wa.me/5513991299921?text=Dr.%20Marcelo%2C%20quero%20entender%20o%20que%20a%20Resolução%20CFM%202.454%2F2026%20exige." class="wa-op" target="_blank" rel="noopener"><span class="wa-op-ico">⚕️</span><div class="wa-op-txt"><strong>Resolução CFM 2.454/2026</strong><span>O que a nova norma exige de mim?</span></div><span class="wa-op-arr">→</span></a>
+          <a href="https://wa.me/5513991299921?text=Dr.%20Marcelo%2C%20quero%20auditar%20os%20contratos%20dos%20softwares%20da%20minha%20clínica." class="wa-op" target="_blank" rel="noopener"><span class="wa-op-ico">📄</span><div class="wa-op-txt"><strong>Contratos com fornecedores de TI</strong><span>Meus contratos me protegem?</span></div><span class="wa-op-arr">→</span></a>
+          <a href="https://wa.me/5513991299921?text=Dr.%20Marcelo%2C%20tenho%20uma%20healthtech%20com%20IA%20clínica%20e%20preciso%20de%20assessoria." class="wa-op" target="_blank" rel="noopener"><span class="wa-op-ico">🚀</span><div class="wa-op-txt"><strong>Healthtech com IA clínica</strong><span>Regularização e contratos de SaMD</span></div><span class="wa-op-arr">→</span></a>
+        </div>
+        <a href="https://wa.me/5513991299921?text=Dr.%20Marcelo%2C%20gostaria%20de%20agendar%20a%20sessão%20de%20diagnóstico%20gratuita." class="btn-main" target="_blank" rel="noopener" style="justify-content:center">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Diagnóstico gratuito — 20 min
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTATO -->
+<section id="contato" class="sec sec-dark">
+  <div class="sec-i">
+    <p class="sec-label">Contato</p>
+    <h2 class="sec-h2">Fale diretamente. Sem formulário.</h2>
+    <div class="contato-grid reveal">
+      <div class="contato-canais">
+        <a href="https://wa.me/5513991299921" class="canal" target="_blank" rel="noopener"><div class="canal-ico">📱</div><div><p class="canal-lbl">WhatsApp · Principal</p><p class="canal-val">(13) 99167-7275</p><p class="canal-sub">Resposta rápida · mensagens e chamadas</p></div><span class="canal-arr">→</span></a>
+        <a href="mailto:marcelo@blank.adv.br" class="canal"><div class="canal-ico">✉️</div><div><p class="canal-lbl">E-mail</p><p class="canal-val">marcelo@blank.adv.br</p><p class="canal-sub">Para consultas mais detalhadas</p></div><span class="canal-arr">→</span></a>
+        <a href="https://www.linkedin.com/in/marceloblank/" class="canal" target="_blank" rel="noopener"><div class="canal-ico">💼</div><div><p class="canal-lbl">LinkedIn</p><p class="canal-val">linkedin.com/in/marceloblank</p><p class="canal-sub">Artigos e atualizações regulatórias</p></div><span class="canal-arr">→</span></a>
+        <a href="https://marceloblank.substack.com/?utm_campaign=profile_chips" class="canal" target="_blank" rel="noopener"><div class="canal-ico">✍️</div><div><p class="canal-lbl">Newsletter · Substack</p><p class="canal-val">Governança de IA na Saúde</p><p class="canal-sub">Análises semanais sobre CFM, LGPD e IA clínica</p></div><span class="canal-arr">→</span></a>
+      </div>
+      <div>
+        <p class="contato-desc">Atendimento a médicos, dentistas, clínicas e healthtechs em todo o Brasil - majoritariamente remoto. Presencial em Santos/SP e região.</p>
+        <a href="https://wa.me/5513991299921?text=Olá%2C%20Dr.%20Marcelo.%20Gostaria%20de%20agendar%20minha%20sessão%20de%20diagnóstico%20gratuita." class="btn-main" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Iniciar pelo WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FECHAMENTO -->
+<section id="fecha">
+  <div class="fecha-i reveal">
+    <h2>Use IA com segurança jurídica,<br>sem travar a inovação.</h2>
+    <p>Converse sobre sua realidade, seus sistemas e seus riscos em uma sessão de diagnóstico inicial gratuita.</p>
+    <div class="fecha-btns">
+      <a href="https://wa.me/5513991299921?text=Quero%20agendar%20minha%20sessão%20de%20diagnóstico%20gratuita." class="btn-main" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Falar no WhatsApp agora
+      </a>
+      <a href="https://substack.com/@marceloblankadv" class="btn-out" target="_blank" rel="noopener">Assinar a newsletter →</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-i">
+    <div class="footer-brand">
+      <a href="#hero" class="brand">
+        <span class="brand-name">Marcelo Blank Advogado</span>
+        <span class="brand-sub">Direito Médico e IA</span>
+      </a>
+      <p>Advocacia boutique com foco em segurança jurídica para médicos, clínicas e healthtechs na era digital.</p>
+    </div>
+    <div>
+      <p class="footer-col-title">Atuação</p>
+      <div class="footer-links">
+        <a href="#oferta">Diagnóstico Jurídico de IA</a>
+        <a href="#oferta">Kit de Blindagem Documental</a>
+        <a href="#oferta">Healthtechs e SaMD</a>
+        <a href="#oferta">Defesa Médica e Litígios</a>
+      </div>
+    </div>
+    <div>
+      <p class="footer-col-title">Conteúdo</p>
+      <div class="footer-links">
+        <a href="https://substack.com/@marceloblankadv" target="_blank" rel="noopener">Newsletter · Substack</a>
+        <a href="https://www.linkedin.com/in/marceloblank/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="#faq">Perguntas Frequentes</a>
+        <a href="#expertise">Sobre o Advogado</a>
+      </div>
+    </div>
+    <div>
+      <p class="footer-col-title">Contato</p>
+      <div class="footer-links">
+        <span>(13) 99167-7275</span>
+        <span>marcelo@blank.adv.br</span>
+        <span>blank.adv.br</span>
+        <span>Santos/SP · Nacional</span>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bar">
+    <p>© 2026 Marcelo Blank Advogado · OAB/SP 498.835 · Todos os direitos reservados</p>
+    <p>Direito Médico · IA · LGPD · Governança Clínica</p>
+  </div>
+</footer>
+
+<!-- WA FLUTUANTE -->
+<a href="https://wa.me/5513991299921?text=Olá%2C%20Dr.%20Marcelo.%20Gostaria%20de%20agendar%20a%20sessão%20de%20diagnóstico%20gratuita." class="wa-float" target="_blank" rel="noopener" title="WhatsApp">
+  <span class="wa-label">Falar pelo WhatsApp</span>
+  <div class="wa-circle">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </div>
+</a>
+
+<script>
+// ── TEMA ──
+const html = document.documentElement;
+const toggle = document.getElementById('themeToggle');
+
+// 1. Detecta preferência do sistema
+const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+// 2. Lê preferência salva (localStorage)
+const saved = localStorage.getItem('mb-theme');
+const initial = saved || (prefersDark ? 'dark' : 'light');
+
+// 3. Aplica tema inicial sem transição
+html.setAttribute('data-theme', initial);
+toggle.checked = (initial === 'light');
+
+// 4. Ativa transições depois do carregamento inicial
+requestAnimationFrame(() => {
+  document.body.style.transition = 'background .35s ease, color .35s ease';
+});
+
+// 5. Toggle
+toggle.addEventListener('change', () => {
+  const next = toggle.checked ? 'light' : 'dark';
+  html.setAttribute('data-theme', next);
+  localStorage.setItem('mb-theme', next);
+});
+
+// 6. Sincroniza com mudança do sistema (se não houver preferência salva)
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+  if (!localStorage.getItem('mb-theme')) {
+    const sys = e.matches ? 'dark' : 'light';
+    html.setAttribute('data-theme', sys);
+    toggle.checked = !e.matches;
+  }
+});
+
+// ── MENU MOBILE ──
+document.getElementById('menuBtn').addEventListener('click', () => {
+  document.getElementById('mobNav').classList.toggle('open');
+});
+document.querySelectorAll('#mobNav a').forEach(a => {
+  a.addEventListener('click', () => document.getElementById('mobNav').classList.remove('open'));
+});
+
+// ── FAQ ──
+function toggleFaq(btn) {
+  const item = btn.parentElement;
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+
+// ── SCROLL REVEAL ──
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('vis');
+      const kids = e.target.querySelectorAll('.risco, .prod-item, .canal, .wa-op, .step');
+      kids.forEach((k, i) => {
+        k.style.opacity = '0';
+        k.style.transform = 'translateY(14px)';
+        k.style.transition = 'opacity .5s ease, transform .5s ease';
+        setTimeout(() => { k.style.opacity = '1'; k.style.transform = 'none'; }, 60 + i * 70);
+      });
+    }
+  });
+}, { threshold: 0.08 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+// ── NAV HIGHLIGHT ──
+const secs = document.querySelectorAll('section[id]');
+const nls = document.querySelectorAll('.nav-links a');
+window.addEventListener('scroll', () => {
+  let cur = '';
+  secs.forEach(s => { if (window.scrollY >= s.offsetTop - 180) cur = s.id; });
+  nls.forEach(a => {
+    a.style.color = a.getAttribute('href') === '#' + cur ? 'var(--accent2)' : 'var(--muted)';
+  });
+}, { passive: true });
+</script>
+</body>
+</html>
