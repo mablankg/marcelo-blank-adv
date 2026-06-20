@@ -1,0 +1,1033 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dr. Marcelo Blank Advocacia | Direito Médico Digital, IA e LGPD</title>
+  <meta name="description" content="Advocacia boutique preventiva e contenciosa em Direito Médico Digital, IA, LGPD, contratos de tecnologia, responsabilidade profissional e saúde digital.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --ink:#11223d; --ink2:#254464; --muted:#667991; --muted2:#8a9bb0;
+      --bg:#f4f7fb; --paper:#fff; --paper2:#f8fbff; --line:#d9e4ef; --line2:#c4d3e3;
+      --blue:#1968c7; --blue2:#103f81; --teal:#147d80; --teal-soft:#e7f5f4;
+      --red:#b84d5c; --red-soft:#fff0f2; --gold:#a96b21; --gold-soft:#fff3e4;
+      --shadow:0 16px 42px rgba(21,56,97,.10); --shadow-sm:0 8px 22px rgba(21,56,97,.06);
+      --r:22px; --max:1210px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--bg);color:var(--ink);font-family:Roboto,Arial,sans-serif;line-height:1.58}
+    a{text-decoration:none;color:inherit} img{display:block;max-width:100%}
+    .wrap{width:min(calc(100% - 46px),var(--max));margin:auto}
+    .eyebrow{display:flex;align-items:center;gap:8px;color:var(--blue);font-size:10px;font-weight:900;letter-spacing:.14em;text-transform:uppercase}
+    .eyebrow:before{content:"";width:20px;height:1px;background:currentColor}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:1px solid transparent;padding:12px 16px;border-radius:12px;font-size:12px;font-weight:900;transition:.2s ease}
+    .btn.primary{background:linear-gradient(135deg,var(--blue),var(--blue2));color:#fff;box-shadow:0 12px 24px rgba(16,63,129,.21)}
+    .btn.primary:hover{transform:translateY(-2px);box-shadow:0 18px 32px rgba(16,63,129,.27)}
+    .btn.ghost{border-color:var(--line2);background:#fff;color:var(--ink)} .btn.ghost:hover{border-color:var(--blue);background:#f8fbff}
+    .btn.blank{border-color:#b9dfdc;background:var(--teal-soft);color:#10686b} .btn.blank:hover{background:#d9efed;transform:translateY(-2px)}
+    .btn.dark{background:#173b68;color:#fff} .btn.dark:hover{transform:translateY(-2px);background:#102e53}
+    header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.86);backdrop-filter:blur(18px);border-bottom:1px solid rgba(217,228,239,.76)}
+    .nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+    .brand{display:flex;align-items:center;gap:11px;min-width:270px}
+    .mark{width:38px;height:38px;display:grid;place-items:center;border-radius:12px;background:linear-gradient(145deg,#1e477f,#1968c7);color:#fff;box-shadow:0 8px 18px rgba(25,104,199,.22);font-size:10px;font-weight:900;letter-spacing:-.08em}
+    .brand strong{display:block;font-size:13px;letter-spacing:.02em} .brand small{display:block;font-size:8px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:3px}
+    .nav-links{display:flex;align-items:center;gap:21px;font-size:11px;font-weight:900;color:var(--muted)} .nav-links a:hover{color:var(--blue)}
+    .nav-actions{display:flex;align-items:center;gap:8px} .menu{display:none;width:40px;height:40px;border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--ink);font-size:18px}
+    .mobile-nav{display:none;padding:0 23px 18px;background:#fff;border-top:1px solid var(--line)} .mobile-nav.open{display:grid;gap:6px} .mobile-nav a{padding:10px 12px;border:1px solid var(--line);border-radius:10px;font-size:12px;font-weight:900}
+    .hero{padding:84px 0 70px;background:linear-gradient(180deg,#f9fcff 0%,var(--bg) 94%);position:relative;overflow:hidden}
+    .hero:before{content:"";position:absolute;right:-240px;top:-280px;width:640px;height:640px;border-radius:50%;background:radial-gradient(circle,rgba(25,104,199,.12),transparent 68%)}
+    .hero-grid{position:relative;display:grid;grid-template-columns:1.06fr .94fr;gap:44px;align-items:center}
+    h1,h2,h3{margin:0;color:var(--ink)} h1{font-size:clamp(44px,5.2vw,72px);line-height:1.01;letter-spacing:-.055em;margin:16px 0 20px;max-width:760px} h1 em{font-style:normal;color:var(--blue)}
+    .hero-copy{margin:0 0 28px;max-width:660px;color:var(--muted);font-size:16px} .hero-actions{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:23px} .hero-note{font-size:11px;color:var(--muted2);max-width:650px} .hero-note b{color:var(--ink)}
+    .hero-panel{background:var(--paper);padding:18px;border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow)}
+    .panel-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;color:var(--muted);font-size:10px;font-weight:900} .panel-top i{display:inline-block;width:7px;height:7px;margin-right:5px;background:#22a67d;border-radius:50%}
+    .panel-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:10px} .metric-big,.metric{border:1px solid var(--line);border-radius:15px;background:#fbfdff} .metric-big{padding:20px} .metric-big small,.metric small{display:block;font-size:9px;color:var(--muted);font-weight:900} .metric-big b{display:block;margin:13px 0 6px;color:#1f4f8c;font-size:42px;line-height:1;letter-spacing:-.08em} .metric-big b span{font-size:13px;color:var(--muted2);letter-spacing:0} .metric-big em{display:inline-flex;padding:5px 7px;background:var(--red-soft);border-radius:999px;color:var(--red);font-size:9px;font-style:normal;font-weight:900}
+    .metrics{display:grid;grid-template-columns:1fr 1fr;gap:10px} .metric{padding:13px} .metric b{display:block;margin-top:6px;font-size:21px;letter-spacing:-.06em}
+    .finding-list{display:grid;gap:8px;margin-top:10px} .finding{display:flex;align-items:center;gap:9px;padding:10px;border:1px solid var(--line);border-radius:11px;background:#fff} .finding-index{display:grid;place-items:center;width:23px;height:23px;border-radius:7px;background:#eef4ff;color:var(--blue);font-size:9px;font-weight:900} .finding b{display:block;font-size:10px} .finding span{display:block;color:var(--muted);font-size:9px} .finding i{margin-left:auto;color:var(--red);font-size:8px;font-style:normal;font-weight:900}
+    .panel-footer{margin-top:10px;padding:11px 12px;border-radius:12px;background:#edf7f7;color:#4a6e72;font-size:10px} .panel-footer b{color:#12686b}
+    section{padding:82px 0} .section-head{max-width:790px;margin-bottom:34px} .section-head h2{margin:13px 0;font-size:clamp(32px,4vw,49px);line-height:1.07;letter-spacing:-.045em} .section-head p{margin:0;color:var(--muted);font-size:15px}
+    .problem{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)} .problem-grid{display:grid;grid-template-columns:.78fr 1.22fr;gap:52px} .quote{font-size:clamp(30px,3.5vw,45px);line-height:1.11;letter-spacing:-.04em;font-weight:700} .copy{color:var(--muted);font-size:15px} .copy p{margin:0 0 13px}
+    .consequences{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:34px} .consequence{padding:18px;border:1px solid var(--line);border-radius:18px;background:var(--paper);box-shadow:var(--shadow-sm)} .consequence i{display:block;color:var(--blue);font-size:10px;font-style:normal;font-weight:900;letter-spacing:.05em} .consequence h3{margin:14px 0 8px;font-size:15px;line-height:1.16} .consequence p{margin:0;color:var(--muted);font-size:11px}
+    .layers{background:#eaf1f8} .layers-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px} .layer{padding:28px;border:1px solid var(--line);border-radius:22px;background:#fff} .layer.brand-layer{border-color:#143e6f;background:linear-gradient(145deg,#143f70,#0d2e53);color:#fff} .tag{display:inline-flex;padding:6px 9px;border-radius:999px;background:#edf4ff;color:var(--blue);font-size:9px;font-weight:900;letter-spacing:.07em;text-transform:uppercase} .brand-layer .tag{background:rgba(134,228,222,.14);color:#a0e9e3} .layer h3{margin:14px 0;font-size:29px;line-height:1.09;letter-spacing:-.04em} .brand-layer h3{color:#fff} .layer p{margin:0 0 17px;color:var(--muted);font-size:13px} .brand-layer p{color:#c6d8ec} .layer ul{display:grid;gap:10px;margin:0;padding:0;list-style:none} .layer li{display:flex;gap:9px;font-size:12px} .layer li:before{content:"✓";color:var(--teal);font-weight:900} .brand-layer li:before{color:#91e2db}
+    .bridge{margin-top:18px;padding:22px;border:1px solid #b8dad7;border-radius:20px;background:linear-gradient(135deg,#e7f6f3,#fbfefe)} .bridge-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:20px;align-items:center} .bridge h3{margin:8px 0;font-size:21px;letter-spacing:-.03em} .bridge p{margin:0;color:var(--muted);font-size:12px}
+    .preventive{background:#fff} .practice-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px} .practice{padding:23px;border:1px solid var(--line);border-radius:20px;background:#fbfdff} .practice .num{color:var(--blue);font-size:10px;font-weight:900;letter-spacing:.05em} .practice h3{margin:18px 0 10px;font-size:19px;line-height:1.16;letter-spacing:-.03em} .practice p{margin:0;color:var(--muted);font-size:12px} .practice .line{height:1px;margin:17px 0 13px;background:var(--line)} .practice small{color:var(--ink2);font-size:10px;font-weight:900}
+    .contention{background:#112f54;color:#fff} .contention .section-head h2{color:#fff} .contention .section-head p{color:#c0d1e5} .contention-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px} .case-card{padding:23px;border:1px solid rgba(220,238,255,.18);border-radius:20px;background:rgba(255,255,255,.045)} .case-card span{display:inline-flex;padding:6px 8px;border-radius:999px;background:rgba(138,225,220,.12);color:#a3eee7;font-size:9px;font-weight:900;letter-spacing:.06em;text-transform:uppercase} .case-card h3{margin:12px 0 9px;color:#fff;font-size:20px;line-height:1.16} .case-card p{margin:0;color:#c8d7ea;font-size:12px}
+    .advogado{background:#f1f5fa} .adv-grid{display:grid;grid-template-columns:.78fr 1.22fr;gap:42px;align-items:center} .portrait-wrap{position:relative;max-width:430px} .portrait-wrap:after{content:"";position:absolute;right:-14px;bottom:-14px;width:84%;height:84%;border:1px solid #b7cde0;border-radius:20px;z-index:0} .portrait{position:relative;z-index:1;overflow:hidden;border:1px solid #c8d7e5;border-radius:20px;box-shadow:var(--shadow);background:#dce7ef} .portrait img{width:100%;aspect-ratio:4/4.8;object-fit:cover;object-position:center top} .caption{position:absolute;left:14px;bottom:14px;padding:10px 12px;border:1px solid rgba(255,255,255,.14);border-radius:12px;background:rgba(14,37,65,.9);color:#fff;font-size:10px} .caption b{display:block;font-size:12px}
+    .adv-copy h2{margin:14px 0;font-size:clamp(33px,4.1vw,52px);line-height:1.06;letter-spacing:-.045em} .adv-copy>p{font-size:14px;color:var(--muted)} .credentials{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-top:21px} .credential{padding:14px;border:1px solid var(--line);border-radius:13px;background:#fff} .credential b{display:block;font-size:12px} .credential span{display:block;margin-top:3px;color:var(--muted);font-size:10px}
+    .faq{background:#fff} .faq-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:42px} .faq-title h2{margin:13px 0;font-size:clamp(33px,4vw,48px);line-height:1.08;letter-spacing:-.045em} .faq-title p{color:var(--muted);font-size:14px} details{padding:17px 0;border-bottom:1px solid var(--line)} summary{display:flex;justify-content:space-between;gap:15px;cursor:pointer;list-style:none;font-size:14px;font-weight:900} summary::-webkit-details-marker{display:none} summary:after{content:"+";color:var(--blue);font-size:20px;line-height:.8} details[open] summary:after{content:"–"} details p{margin:0;padding:12px 26px 0 0;color:var(--muted);font-size:12px}
+    .contact{background:#14355b;color:#fff} .contact-grid{display:grid;grid-template-columns:.82fr 1.18fr;gap:38px} .contact h2{margin:13px 0;color:#fff;font-size:clamp(33px,4vw,48px);line-height:1.08;letter-spacing:-.045em} .contact p{color:#c6d8ea;font-size:14px;max-width:490px} .contact-card{padding:22px;border:1px solid rgba(220,238,255,.19);border-radius:20px;background:rgba(255,255,255,.055)} .contact-row{display:flex;justify-content:space-between;gap:18px;padding:12px 0;border-bottom:1px solid rgba(220,238,255,.15)} .contact-row:last-child{border-bottom:0} .contact-row small{display:block;color:#a9c0da;font-size:9px;font-weight:900;letter-spacing:.07em;text-transform:uppercase} .contact-row b{display:block;margin-top:3px;color:#fff;font-size:12px} .contact-row a{align-self:center;color:#8be0dc;font-size:11px;font-weight:900}
+    footer{padding:28px 0 34px;background:#0b213d;color:#bed1e4} .footer{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;font-size:10px} .footer b{color:#fff}
+    .wa{position:fixed;right:20px;bottom:20px;z-index:45;display:flex;align-items:center;gap:8px;padding:11px 14px;border-radius:999px;background:#25d366;color:#053019;box-shadow:0 17px 35px rgba(37,211,102,.29);font-size:11px;font-weight:900;transition:.2s} .wa:hover{transform:translateY(-3px)} .wa-dot{display:grid;place-items:center;width:25px;height:25px;border-radius:50%;background:rgba(0,0,0,.1);font-size:15px}
+    @media(max-width:980px){.nav-links{display:none}.nav-actions .btn{display:none}.menu{display:inline-grid;place-items:center}.hero-grid,.problem-grid,.adv-grid,.faq-grid,.contact-grid,.bridge-grid{grid-template-columns:1fr}.hero-panel{max-width:650px}.consequences{grid-template-columns:1fr 1fr}.layers-grid,.contention-grid{grid-template-columns:1fr}.practice-grid{grid-template-columns:1fr}}
+    @media(max-width:620px){.wrap{width:min(calc(100% - 30px),var(--max))}.nav{height:66px}.brand{min-width:0}.brand strong{font-size:11px}.brand small{font-size:7px}.hero{padding:56px 0}h1{font-size:44px}.hero-copy{font-size:14px}.panel-grid{grid-template-columns:1fr}.consequences,.credentials{grid-template-columns:1fr}.hero-panel{padding:13px}.contact-card{padding:17px}.wa{left:50%;right:auto;transform:translateX(-50%);bottom:14px;width:calc(100% - 30px);justify-content:center;white-space:nowrap}.wa:hover{transform:translateX(-50%) translateY(-2px)}}
+  </style>
+
+  <style>
+    /* Legibilidade reforçada: textos explicativos e conteúdo decisório */
+    body{font-size:18px;line-height:1.72}
+    .hero-copy{font-size:19px;line-height:1.62}
+    .hero-note{font-size:14px;line-height:1.62}
+    .section-head p,.copy{font-size:18px;line-height:1.72}
+    .copy p{margin-bottom:17px}
+    .consequence p{font-size:14px;line-height:1.62}
+    .layer p{font-size:16px;line-height:1.7}
+    .layer li{font-size:15px;line-height:1.52}
+    .bridge p{font-size:15px;line-height:1.64}
+    .practice p{font-size:15px;line-height:1.64}
+    .case-card p{font-size:15px;line-height:1.64}
+    .adv-copy>p{font-size:17px;line-height:1.7}
+    .credential span{font-size:12px;line-height:1.55}
+    .faq-title p{font-size:16px;line-height:1.65}
+    summary{font-size:17px;line-height:1.42;padding-right:8px}
+    details p{font-size:16px;line-height:1.66;padding-top:15px}
+    .contact p{font-size:17px;line-height:1.66}
+    .contact-row b{font-size:14px}
+    .contact-row a{font-size:12px}
+    .finding span{font-size:10px;line-height:1.45}
+    .panel-footer{font-size:11px;line-height:1.55}
+    .section-head h2,.adv-copy h2,.faq-title h2,.contact h2{margin-bottom:16px}
+    @media(max-width:620px){
+      body{font-size:17px}
+      .hero-copy{font-size:17px}
+      .section-head p,.copy,.adv-copy>p,.contact p{font-size:16px}
+      .layer p,.practice p,.case-card p,details p{font-size:15px}
+      summary{font-size:16px}
+      .consequence p{font-size:14px}
+    }
+  </style>
+
+
+  <style>
+    /* Reforço de leitura dos subtítulos e chamadas azuis */
+    .eyebrow{
+      font-size:12px;
+      line-height:1.25;
+      letter-spacing:.15em;
+    }
+    .eyebrow:before{width:26px}
+    .tag{
+      font-size:10px;
+      line-height:1.25;
+      padding:7px 10px;
+    }
+    .consequence i,
+    .practice .num{
+      font-size:11px;
+      line-height:1.35;
+      letter-spacing:.065em;
+    }
+    .panel-top,
+    .metric-big small,
+    .metric small{
+      font-size:10px;
+      line-height:1.35;
+    }
+    .brand small{font-size:8.5px}
+    @media(max-width:620px){
+      .eyebrow{font-size:11px;letter-spacing:.12em}
+      .tag{font-size:9.5px}
+      .consequence i,.practice .num{font-size:10px}
+    }
+  </style>
+
+
+  <style>
+    .boutique-strip{background:#fff;border-top:1px solid #d9e4ef;border-bottom:1px solid #d9e4ef;padding:20px 0}
+    .boutique-strip-grid{display:grid;grid-template-columns:1fr auto;gap:28px;align-items:center}
+    .boutique-kicker{display:block;color:#1968c7;font-size:11px;font-weight:900;letter-spacing:.13em;margin-bottom:6px}
+    .boutique-strip strong{font-size:16px;line-height:1.42;color:#11223d;max-width:720px;display:block}
+    .boutique-points{display:flex;justify-content:flex-end;gap:8px;flex-wrap:wrap}
+    .boutique-points span{display:inline-flex;border:1px solid #c9d9e7;border-radius:999px;padding:7px 10px;background:#f7fbff;color:#254464;font-size:11px;font-weight:800}
+    @media(max-width:820px){
+      .boutique-strip-grid{grid-template-columns:1fr}
+      .boutique-points{justify-content:flex-start}
+    }
+  </style>
+
+
+  <meta name="author" content="Dr. Marcelo Blank">
+  <meta name="keywords" content="advogado direito médico, advogado direito médico digital, direito algorítmico, advogado inteligência artificial, advogado IA saúde, LGPD saúde, advogado healthtech, responsabilidade médica, responsabilidade civil médica, contrato healthtech, contratos de software médico, contencioso LGPD, governança algorítmica, compliance digital, SaMD ANVISA, dados de saúde, defesa ética CFM CRM, planos de saúde ANS, inteligência artificial medicina">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="theme-color" content="#f5f8fc">
+  <link rel="canonical" href="https://blank.adv.br/">
+  <link rel="alternate" hreflang="pt-BR" href="https://blank.adv.br/">
+  <meta property="og:site_name" content="Dr. Marcelo Blank Advocacia">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:title" content="Dr. Marcelo Blank Advocacia | Direito Médico Digital, IA e LGPD">
+  <meta property="og:description" content="Advocacia boutique preventiva e contenciosa em IA, LGPD, dados, contratos de tecnologia e responsabilidade profissional em saúde.">
+  <meta property="og:url" content="https://blank.adv.br/">
+  <meta property="og:image" content="https://blank.adv.br/assets/blank-adv-social-card.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Dr. Marcelo Blank Advocacia — Direito Médico Digital, IA e LGPD">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Dr. Marcelo Blank Advocacia | Direito Médico Digital, IA e LGPD">
+  <meta name="twitter:description" content="Advocacia boutique preventiva e contenciosa em saúde digital, IA, LGPD e contratos de tecnologia.">
+  <meta name="twitter:image" content="https://blank.adv.br/assets/blank-adv-social-card.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "LegalService",
+        "@id": "https://blank.adv.br/#legalservice",
+        "name": "Dr. Marcelo Blank Advocacia",
+        "url": "https://blank.adv.br/",
+        "image": "https://blank.adv.br/assets/blank-adv-social-card.png",
+        "telephone": "+55-13-99129-9921",
+        "email": "marcelo@blank.adv.br",
+        "areaServed": "BR",
+        "description": "Advocacia boutique preventiva e contenciosa em Direito Médico Digital, Inteligência Artificial, LGPD, contratos de tecnologia e responsabilidade profissional em saúde.",
+        "founder": { "@id": "https://blank.adv.br/#marcelo-blank" },
+        "sameAs": ["https://www.linkedin.com/in/marceloblank/", "https://marceloblank.substack.com/?utm_campaign=profile_chips"],
+        "knowsAbout": [
+          "Direito Médico Digital",
+          "Direito Algorítmico",
+          "Governança Algorítmica",
+          "Compliance Digital",
+          "Contratos de Software Médico",
+          "Responsabilidade Civil Médica",
+          "SaMD e ANVISA",
+          "Inteligência Artificial na Saúde",
+          "LGPD e Dados Sensíveis",
+          "Responsabilidade Profissional em Saúde",
+          "Contratos de Tecnologia",
+          "Contencioso em IA e LGPD"
+        ]
+      },
+      {
+        "@type": "Person",
+        "@id": "https://blank.adv.br/#marcelo-blank",
+        "name": "Dr. Marcelo Blank",
+        "jobTitle": "Advogado",
+        "url": "https://blank.adv.br/",
+        "image": "https://blank.adv.br/assets/marcelo-blank-foto.png",
+        "sameAs": ["https://www.linkedin.com/in/marceloblank/", "https://marceloblank.substack.com/?utm_campaign=profile_chips"],
+        "knowsAbout": [
+          "Direito Médico",
+          "Inteligência Artificial",
+          "LGPD",
+          "Governança Digital",
+          "Contratos de Tecnologia"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://blank.adv.br/#website",
+        "url": "https://blank.adv.br/",
+        "name": "Dr. Marcelo Blank Advocacia",
+        "inLanguage": "pt-BR",
+        "publisher": { "@id": "https://blank.adv.br/#legalservice" }
+      }
+    ]
+  }
+  </script>
+
+
+  <style>
+    .articles{background:#f7fbff;border-top:1px solid #d9e4ef;border-bottom:1px solid #d9e4ef}
+    .articles-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:40px;align-items:center}
+    .articles h2{font-size:clamp(33px,4vw,48px);line-height:1.08;letter-spacing:-.045em;margin:13px 0}
+    .articles p{font-size:16px;line-height:1.68;color:#667991;max-width:600px}
+    .article-cards{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .article-card{display:flex;flex-direction:column;min-height:230px;padding:22px;border:1px solid #cbd9e7;border-radius:18px;background:#fff;box-shadow:0 8px 24px rgba(21,56,97,.06);transition:.2s ease}
+    .article-card:hover{transform:translateY(-3px);border-color:#1968c7;box-shadow:0 16px 30px rgba(21,56,97,.10)}
+    .article-card span{font-size:10px;font-weight:900;letter-spacing:.12em;color:#1968c7}
+    .article-card h3{font-size:19px;line-height:1.18;letter-spacing:-.03em;margin:15px 0 9px}
+    .article-card p{font-size:13px;line-height:1.58;margin:0;color:#667991}
+    .article-card b{margin-top:auto;padding-top:17px;color:#1968c7;font-size:12px}
+    @media(max-width:980px){.articles-grid{grid-template-columns:1fr}}
+    @media(max-width:620px){.article-cards{grid-template-columns:1fr}.articles p{font-size:15px}}
+  </style>
+
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" href="/assets/blank-adv-favicon.svg" type="image/svg+xml">
+
+  <style>
+    .curriculum{background:#fff;border-top:1px solid #d9e4ef;border-bottom:1px solid #d9e4ef}
+    .curriculum-grid{display:grid;grid-template-columns:250px 1fr;gap:30px;align-items:start}
+    .curriculum-card{padding:24px;border:1px solid #d7e2ed;background:#fbfdff}
+    .curriculum-photo{border:1px solid #c9d9e7;border-radius:8px;padding:3px;background:#fff}
+    .curriculum-photo img{width:100%;aspect-ratio:4/4.8;object-fit:cover;object-position:center top}
+    .curriculum-card h3{font-size:18px;margin:17px 0 4px}
+    .curriculum-card .oab{font-size:11px;color:#1968c7;font-weight:900;letter-spacing:.05em}
+    .curriculum-card ul{list-style:none;padding:0;margin:19px 0 0;display:grid;gap:0}
+    .curriculum-card li{position:relative;padding:12px 0 12px 16px;border-bottom:1px solid #dce5ee;color:#315274;font-size:12px;line-height:1.48}
+    .curriculum-card li:before{content:"✓";position:absolute;left:0;color:#1968c7;font-weight:900}
+    .curriculum-copy h2{font-size:clamp(34px,4vw,49px);line-height:1.08;letter-spacing:-.05em;margin:14px 0}
+    .curriculum-copy>h3{font-size:24px;line-height:1.18;letter-spacing:-.03em;max-width:800px;margin:0 0 14px}
+    .curriculum-copy>p{font-size:16px;color:#4f6b89;max-width:860px;margin:0 0 13px}
+    .curriculum-copy blockquote{margin:20px 0;padding:14px 17px;border-left:3px solid #1968c7;background:#f0f5f9;color:#153b67;font-size:15px;line-height:1.58;font-style:italic}
+    .credentials-highlight{display:grid;gap:10px;margin:20px 0}
+    .credential-highlight{display:flex;gap:13px;padding:14px;border:1px solid #bcd3e7;background:#eaf4ff}
+    .credential-icon{width:34px;height:34px;display:grid;place-items:center;flex:0 0 auto;border:1px solid #9fc5e8;border-radius:8px;color:#1968c7;background:#dff1ff;font-size:18px}
+    .credential-highlight small{display:block;color:#1968c7;font-size:9px;font-weight:900;letter-spacing:.12em}
+    .credential-highlight strong{display:block;margin:3px 0;font-size:13px;color:#10213d}
+    .credential-highlight p{margin:0;color:#7289a5;font-size:11px;line-height:1.48}
+    .keyword-pills{display:flex;flex-wrap:wrap;gap:8px}
+    .keyword-pills span{display:inline-flex;padding:7px 10px;border:1px solid #bcd0e3;border-radius:6px;background:#fff;color:#2a5687;font-size:11px;font-weight:700}
+
+    footer{background:#deebf8;color:#244d7a;padding:48px 0 26px}
+    .footer-main{display:grid;grid-template-columns:1.45fr 1fr 1fr 1fr;gap:32px}
+    .footer-logo{width:72px;height:54px;display:grid;place-items:center;color:#173a6a;font-size:24px;font-weight:900;letter-spacing:-.08em;border-bottom:1px solid #7ba1c9;margin-bottom:18px}
+    .footer-brand p{max-width:300px;font-size:15px;line-height:1.6;margin:0;color:#315b8a}
+    .footer-col{display:grid;align-content:start;gap:11px}
+    .footer-col h4{margin:0 0 5px;color:#0862be;font-size:11px;letter-spacing:.14em;text-transform:uppercase}
+    .footer-col a,.footer-col span{font-size:14px;line-height:1.45;color:#315b8a}
+    .footer-col a:hover{color:#0c4b91;text-decoration:underline}
+    .newsletter-footer{display:flex;justify-content:space-between;gap:30px;align-items:center;margin-top:34px;padding:24px 0;border-top:1px solid #bfd3e8;border-bottom:1px solid #bfd3e8}
+    .newsletter-footer .eyebrow{font-size:11px}
+    .newsletter-footer h3{font-size:22px;line-height:1.22;margin:10px 0 8px;max-width:700px;color:#10213d}
+    .newsletter-footer p{margin:0;max-width:720px;color:#4f7094;font-size:14px;line-height:1.58}
+    .newsletter-button{display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;padding:13px 16px;border-radius:12px;background:#1968c7;color:#fff;font-size:12px;font-weight:900;box-shadow:0 10px 20px rgba(25,104,199,.18)}
+    .newsletter-button:hover{background:#103f81}
+    .footer-bottom{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;padding-top:24px;color:#6386aa;font-size:12px}
+    @media(max-width:980px){
+      .curriculum-grid{grid-template-columns:1fr}
+      .curriculum-card{max-width:420px}
+      .footer-main{grid-template-columns:1fr 1fr}
+      .newsletter-footer{align-items:flex-start;flex-direction:column}
+    }
+    @media(max-width:620px){
+      .curriculum-copy>h3{font-size:20px}
+      .curriculum-copy>p{font-size:15px}
+      .footer-main{grid-template-columns:1fr}
+      .footer-brand p{max-width:none}
+      .newsletter-footer h3{font-size:20px}
+      .newsletter-button{width:100%}
+      .footer-bottom{font-size:11px}
+    }
+  </style>
+
+
+<style>
+  .situations{background:#eef5fb;border-top:1px solid #d5e2ee;border-bottom:1px solid #d5e2ee}
+  .situations-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .situation-card{padding:22px;border:1px solid #cad9e7;border-radius:18px;background:#fff;box-shadow:0 8px 22px rgba(21,56,97,.05)}
+  .situation-card span{display:block;color:#1968c7;font-size:10px;font-weight:900;letter-spacing:.09em}
+  .situation-card h3{margin:16px 0 10px;font-size:19px;line-height:1.17;letter-spacing:-.03em}
+  .situation-card p{margin:0;color:#607791;font-size:14px;line-height:1.6}
+  .credential-highlight{display:flex;gap:13px;padding:14px;border:1px solid #bcd3e7;background:#eaf4ff;color:inherit;transition:.2s ease}
+  .credential-highlight:hover{transform:translateY(-2px);border-color:#1968c7;box-shadow:0 10px 22px rgba(25,104,199,.12)}
+  .credential-highlight em{display:block;margin-top:7px;color:#1968c7;font-size:11px;font-style:normal;font-weight:900}
+  @media(max-width:980px){
+    .situations-grid{grid-template-columns:1fr 1fr}
+  }
+  @media(max-width:620px){
+    .situations-grid{grid-template-columns:1fr}
+    footer{display:none!important}
+    .situations .section-head{margin-bottom:24px}
+    .situation-card p{font-size:15px}
+  }
+</style>
+
+
+<style>
+  .partners{background:#ffffff;border-top:1px solid #d9e4ef;border-bottom:1px solid #d9e4ef}
+  .partner-grid{display:grid;grid-template-columns:1fr .9fr;gap:28px;align-items:stretch}
+  .partners h2{font-size:clamp(33px,4vw,49px);line-height:1.08;letter-spacing:-.045em;margin:13px 0 15px}
+  .partners p{font-size:16px;line-height:1.68;color:#607791;max-width:690px}
+  .partner-panel{padding:25px;border:1px solid #b7d4d1;border-radius:22px;background:linear-gradient(145deg,#e8f7f5,#f9fdfd)}
+  .partner-label{display:inline-flex;padding:6px 9px;border-radius:999px;background:#d6efec;color:#12686b;font-size:10px;font-weight:900;letter-spacing:.08em;text-transform:uppercase}
+  .partner-item{padding:15px 0;border-bottom:1px solid #c7e1de}
+  .partner-item:last-of-type{border-bottom:0;margin-bottom:18px}
+  .partner-item b{display:block;color:#13395e;font-size:15px}
+  .partner-item span{display:block;margin-top:4px;color:#557582;font-size:13px;line-height:1.56}
+  @media(max-width:980px){.partner-grid{grid-template-columns:1fr}}
+  @media(max-width:620px){.partners p{font-size:15px}.partner-item span{font-size:14px}}
+</style>
+
+
+<style>
+  /* Conversão: jornada objetiva e menor densidade visual no desktop */
+  .how-it-works{background:#ffffff;border-top:1px solid #d9e4ef;border-bottom:1px solid #d9e4ef}
+  .compact-head{max-width:720px;margin-bottom:28px}
+  .compact-head p{max-width:690px}
+  .process-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .process-step{display:grid;grid-template-columns:42px 1fr;gap:13px;padding:22px;border:1px solid #cad9e7;border-radius:18px;background:#fbfdff}
+  .process-number{display:grid;place-items:center;width:38px;height:38px;border-radius:10px;background:#eaf2ff;color:#1968c7;font-size:12px;font-weight:900}
+  .process-label{display:block;color:#1968c7;font-size:10px;font-weight:900;letter-spacing:.1em;text-transform:uppercase}
+  .process-step h3{margin:11px 0 9px;font-size:20px;line-height:1.16;letter-spacing:-.03em}
+  .process-step p{margin:0;color:#607791;font-size:14px;line-height:1.6}
+  .process-cta{display:flex;justify-content:space-between;align-items:center;gap:18px;margin-top:16px;padding:16px 18px;border:1px solid #b7d6d3;border-radius:16px;background:linear-gradient(135deg,#e9f6f5,#fbfefe)}
+  .process-cta strong{display:block;color:#183d67;font-size:14px}
+  .process-cta span{display:block;margin-top:3px;color:#597987;font-size:13px}
+
+  @media(min-width:981px){
+    .section-head{margin-bottom:26px}
+    .section-head p{font-size:14px;line-height:1.58}
+    .copy{font-size:14px;line-height:1.6}
+    .copy p{margin-bottom:10px}
+    .partners p,.articles p{font-size:14px;line-height:1.58}
+    .curriculum-copy>p{font-size:15px;line-height:1.62}
+    .faq-title p{font-size:13px;line-height:1.56}
+  }
+  @media(max-width:980px){
+    .process-grid{grid-template-columns:1fr}
+  }
+  @media(max-width:620px){
+    .process-step{grid-template-columns:36px 1fr;padding:18px}
+    .process-number{width:34px;height:34px}
+    .process-step h3{font-size:18px}
+    .process-step p{font-size:15px}
+    .process-cta{align-items:stretch;flex-direction:column}
+    .process-cta .btn{width:100%}
+  }
+</style>
+
+
+<style>
+  .nav-links{gap:28px}
+  .nav-links a{position:relative}
+  .nav-links a:hover:after{
+    content:"";
+    position:absolute;
+    left:0;right:0;bottom:-8px;
+    height:2px;
+    background:#1968c7;
+    border-radius:2px;
+  }
+  @media(max-width:980px){
+    .nav-links{gap:0}
+  }
+</style>
+
+
+<style>
+  @media (max-width: 620px){
+    html{font-size:18px}
+    body{font-size:18px;line-height:1.64}
+
+    /* Header */
+    .brand small{font-size:9.5px;letter-spacing:.075em}
+    .nav-toggle{min-width:42px;min-height:42px}
+
+    /* Hero */
+    .hero{padding-top:42px}
+    .hero .eyebrow{font-size:11px;letter-spacing:.1em}
+    .hero h1{font-size:clamp(35px,10vw,47px);line-height:1.04}
+    .hero-copy{font-size:18px!important;line-height:1.62}
+    .hero .positioning,
+    .hero .positioning p{font-size:15px!important;line-height:1.56}
+    .hero .btn{font-size:14px;min-height:48px;padding:13px 16px}
+
+    /* General reading */
+    .eyebrow{font-size:11px!important;line-height:1.4}
+    .section-head p,.copy,.copy p,.articles p,.partners p,
+    .curriculum-copy>p,.faq-title p{font-size:17px!important;line-height:1.68!important}
+    .section-head h2,.articles h2,.partners h2,
+    .curriculum-copy h2{font-size:clamp(31px,8.8vw,39px)!important;line-height:1.1}
+    .curriculum-copy>h3{font-size:22px!important;line-height:1.23}
+
+    /* Diagnostic / visual blocks */
+    .metric-big small,.metric small,.panel-top{font-size:11px!important}
+    .metric-big strong{font-size:36px!important}
+    .metric strong{font-size:27px!important}
+    .risk-row strong{font-size:13px!important}
+    .risk-row span{font-size:11px!important}
+    .risk-row p{font-size:12px!important;line-height:1.45}
+
+    /* Boutique strip and tags */
+    .boutique-kicker{font-size:11px!important}
+    .boutique-strip strong{font-size:17px!important;line-height:1.45}
+    .boutique-points span,.keyword-pills span{font-size:12px!important;padding:8px 10px}
+
+    /* Cards and process */
+    .process-label,.situation-card span,.partner-label,
+    .credential-highlight small{font-size:10px!important}
+    .process-step h3,.situation-card h3{font-size:21px!important;line-height:1.2}
+    .process-step p,.situation-card p{font-size:16px!important;line-height:1.64}
+    .process-cta strong{font-size:16px!important}
+    .process-cta span{font-size:15px!important;line-height:1.5}
+
+    /* Curriculum */
+    .curriculum-card h3{font-size:20px!important}
+    .curriculum-card li{font-size:14px!important;line-height:1.55}
+    .curriculum-copy blockquote{font-size:16px!important;line-height:1.65}
+    .credential-highlight strong{font-size:15px!important;line-height:1.35}
+    .credential-highlight p{font-size:13px!important;line-height:1.55}
+    .credential-highlight em{font-size:12px!important}
+
+    /* FAQ and contact */
+    details summary{font-size:18px!important;line-height:1.45}
+    details p{font-size:16px!important;line-height:1.65}
+    .contact-row small{font-size:12px!important}
+    .contact-row b,.contact-row a{font-size:16px!important;line-height:1.45}
+
+    /* Mobile spacing */
+    section{padding-top:56px;padding-bottom:56px}
+    .wrap{padding-left:18px;padding-right:18px}
+  }
+</style>
+
+
+<style id="mobile-reading-priority">
+@media screen and (max-width: 760px){
+  html{
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    font-size:20px !important;
+  }
+  body{
+    font-size:20px !important;
+    line-height:1.7 !important;
+  }
+
+  /* Fixed top navigation stays compact, content becomes readable */
+  .nav{height:72px !important}
+  .brand strong{font-size:12px !important}
+  .brand small{font-size:8.5px !important}
+  .menu,.nav-toggle{width:44px !important;height:44px !important}
+
+  /* Hero */
+  h1,.hero h1{
+    font-size:42px !important;
+    line-height:1.08 !important;
+    letter-spacing:-.045em !important;
+  }
+  .hero-copy,.hero .hero-copy{
+    font-size:20px !important;
+    line-height:1.7 !important;
+  }
+  .hero-note,.hero .hero-note,
+  .hero .positioning,.hero .positioning p{
+    font-size:16px !important;
+    line-height:1.62 !important;
+  }
+  .hero .btn,.btn{
+    font-size:15px !important;
+    min-height:50px !important;
+    padding:14px 17px !important;
+  }
+
+  /* Global content */
+  .eyebrow,.boutique-kicker,.partner-label,
+  .process-label,.situation-card span,.credential-highlight small,
+  .contact-row small{
+    font-size:11px !important;
+    line-height:1.4 !important;
+  }
+  .section-head h2,.articles h2,.partners h2,.curriculum-copy h2,
+  .contact h2,.faq-title h2,.adv-copy h2{
+    font-size:34px !important;
+    line-height:1.12 !important;
+  }
+  .section-head p,.copy,.copy p,.articles p,.partners p,
+  .curriculum-copy>p,.faq-title p,.adv-copy>p,.contact p,
+  .bridge p,.layer p,.practice p,.case-card p{
+    font-size:19px !important;
+    line-height:1.7 !important;
+  }
+
+  /* Cards */
+  .consequence h3,.practice h3,.case-card h3,.article-card h3,
+  .situation-card h3,.process-step h3{
+    font-size:22px !important;
+    line-height:1.24 !important;
+  }
+  .consequence p,.process-step p,.situation-card p,
+  .article-card p,.partner-item span,.credential-highlight p,
+  details p{
+    font-size:18px !important;
+    line-height:1.68 !important;
+  }
+  .layer li,.curriculum-card li{
+    font-size:17px !important;
+    line-height:1.62 !important;
+  }
+  .curriculum-copy>h3{
+    font-size:24px !important;
+    line-height:1.28 !important;
+  }
+  .curriculum-copy blockquote{
+    font-size:18px !important;
+    line-height:1.68 !important;
+  }
+  .credential-highlight strong,.partner-item b,
+  .process-cta strong{
+    font-size:17px !important;
+    line-height:1.45 !important;
+  }
+  .process-cta span{font-size:17px !important;line-height:1.56 !important}
+
+  /* FAQ/contact */
+  summary,details summary{
+    font-size:20px !important;
+    line-height:1.48 !important;
+  }
+  .contact-row b,.contact-row a{
+    font-size:17px !important;
+    line-height:1.45 !important;
+  }
+
+  /* Diagnostic visual: still subordinate but readable */
+  .panel-top,.metric-big small,.metric small,
+  .finding b,.finding span,.panel-footer{
+    font-size:13px !important;
+    line-height:1.45 !important;
+  }
+  .finding i{font-size:11px !important}
+  .metric-big b,.metric-big strong{font-size:42px !important}
+  .metric b,.metric strong{font-size:30px !important}
+
+  /* Tags/chips */
+  .boutique-strip strong{font-size:19px !important;line-height:1.5 !important}
+  .boutique-points span,.keyword-pills span,.tag{
+    font-size:13px !important;
+    line-height:1.35 !important;
+    padding:9px 11px !important;
+  }
+
+  /* spacing */
+  section{padding-top:64px !important;padding-bottom:64px !important}
+  .wrap{width:min(calc(100% - 32px),var(--max)) !important}
+  .hero{padding-top:50px !important}
+
+  /* Footer deliberately hidden on mobile as requested */
+  footer{display:none !important}
+}
+</style>
+
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#inicio"><span class="mark">MB</span><span><strong>DR. MARCELO BLANK ADVOCACIA</strong><small>Advocacia Boutique · Direito Médico Digital · IA · LGPD</small></span></a>
+    <nav class="nav-links">
+      <a href="#problema">Problema</a>
+      <a href="#como-funciona">Como funciona</a>
+      <a href="#curriculo">Dr. Marcelo</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <div class="nav-actions"><a class="btn primary" href="https://wa.me/5513991299921?text=Ol%C3%A1%2C%20quero%20conversar%20sobre%20uma%20situa%C3%A7%C3%A3o%20jur%C3%ADdica%20envolvendo%20IA%2C%20LGPD%2C%20dados%20ou%20tecnologia%20na%20%C3%A1rea%20da%20sa%C3%BAde." target="_blank" rel="noopener">Falar com o advogado ↗</a><button class="menu" id="menuBtn">☰</button></div>
+  </div>
+  <nav class="mobile-nav" id="mobileNav">
+      <a href="#problema">Problema</a>
+      <a href="#como-funciona">Como funciona</a>
+      <a href="#curriculo">Dr. Marcelo</a>
+      <a href="#contato">Contato</a>
+      <a href="https://wa.me/5513991299921?text=Ol%C3%A1%2C%20quero%20conversar%20sobre%20uma%20situa%C3%A7%C3%A3o%20jur%C3%ADdica%20envolvendo%20IA%2C%20LGPD%2C%20dados%20ou%20tecnologia%20na%20%C3%A1rea%20da%20sa%C3%BAde." target="_blank" rel="noopener">WhatsApp ↗</a>
+    </nav>
+</header>
+
+<main>
+<section class="hero" id="inicio">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">Advocacia boutique · Preventivo e contencioso</div>
+      <h1>Direito Médico Digital é um nicho. A atuação é <em>jurídica, estratégica e especializada</em>.</h1>
+      <p class="hero-copy">A advocacia boutique do Dr. Marcelo Blank atende médicos, clínicas, hospitais e healthtechs em questões de IA, LGPD, dados, tecnologia, contratos e responsabilidade profissional. O foco em saúde digital dá profundidade técnica; a atuação jurídica alcança prevenção, negociação, incidentes e contencioso.</p>
+      <div class="hero-actions">
+        <a class="btn primary" href="https://wa.me/5513991299921?text=Ol%C3%A1%2C%20quero%20conversar%20sobre%20uma%20situa%C3%A7%C3%A3o%20jur%C3%ADdica%20envolvendo%20IA%2C%20LGPD%2C%20dados%20ou%20tecnologia%20na%20%C3%A1rea%20da%20sa%C3%BAde." target="_blank" rel="noopener">Conversar com advogado especialista ↗</a>
+        <a class="btn blank" href="https://blank.com.br/" target="_blank" rel="noopener">Conhecer a metodologia BLANK AI RISK ↗</a>
+      </div>
+      <div class="hero-note"><b>Posicionamento:</b> advocacia boutique com especialização vertical em saúde digital e competências jurídicas horizontais em IA, LGPD, contratos, responsabilidade civil, incidentes e defesa técnico-jurídica.</div>
+    </div>
+    <aside class="hero-panel">
+      <div class="panel-top"><span>Leitura técnico-jurídica de risco</span><span><i></i>Contexto ativo</span></div>
+      <div class="panel-grid">
+        <div class="metric-big"><small>EXPOSIÇÃO JURÍDICO-DIGITAL</small><b>78<span>/100</span></b><em>Prioridade de adequação</em></div>
+        <div class="metrics">
+          <div class="metric"><small>IA e supervisão</small><b>4</b></div>
+          <div class="metric"><small>Fornecedores críticos</small><b>6</b></div>
+          <div class="metric"><small>Fluxos sensíveis</small><b>8</b></div>
+          <div class="metric"><small>Provas disponíveis</small><b>48%</b></div>
+        </div>
+      </div>
+      <div class="finding-list">
+        <div class="finding"><span class="finding-index">01</span><div><b>Uso de IA sem rastro no prontuário</b><span>O médico precisa demonstrar revisão crítica e decisão final.</span></div><i>ALTO</i></div>
+        <div class="finding"><span class="finding-index">02</span><div><b>Fornecedor digital sem responsabilidade proporcional</b><span>Contrato e logs precisam proteger a operação.</span></div><i>ALTO</i></div>
+        <div class="finding"><span class="finding-index">03</span><div><b>Dados sensíveis em canais sem protocolo</b><span>Mensagem e atendimento também podem formar prova.</span></div><i>MÉDIO</i></div>
+      </div>
+      <div class="panel-footer"><b>BLANK AI RISK</b> organiza a leitura de risco. A advocacia transforma os achados em prevenção, documentação, contrato e estratégia de defesa.</div>
+    </aside>
+  </div>
+</section>
+
+
+    <section class="boutique-strip">
+      <div class="wrap boutique-strip-grid">
+        <div>
+          <span class="boutique-kicker">ADVOCACIA BOUTIQUE</span>
+          <strong>Especialização vertical em saúde digital. Atuação jurídica ampla onde o risco exige profundidade.</strong>
+        </div>
+        <div class="boutique-points">
+          <span>Direito Médico Digital</span>
+          <span>Direito Algorítmico</span>
+          <span>IA e LGPD</span>
+          <span>Contratos e Fornecedores</span>
+          <span>Preventivo e Contencioso</span>
+        </div>
+      </div>
+    </section>
+
+<section class="problem" id="problema">
+  <div class="wrap">
+    <div class="problem-grid">
+      <div class="eyebrow">O problema jurídico</div>
+      <div>
+        <div class="quote">A operação digital registra fatos todos os dias. A defesa só existe quando esses fatos podem ser reconstruídos.</div>
+        <div class="copy">
+          <p>Em saúde, o problema não é somente um erro técnico. Muitas vezes ele nasce da combinação entre um evento clínico, comunicação mal conduzida, prontuário frágil, ferramenta sem governança, contrato incompleto e ausência de prova de revisão humana.</p>
+          <p>Quando a questão chega ao paciente, ao CRM, à ANPD, ao Judiciário, a uma auditoria ou a um investidor, a discussão deixa de ser tecnológica. Ela se torna jurídica, probatória, contratual e reputacional.</p>
+        </div>
+      </div>
+    </div>
+    <div class="consequences">
+      <article class="consequence"><i>01 / RESPONSABILIDADE</i><h3>Fragilidade em demandas de paciente</h3><p>Sem trilha de decisão, consentimento e revisão documentada, a clínica começa uma discussão defensiva em posição vulnerável.</p></article>
+      <article class="consequence"><i>02 / REGULAÇÃO</i><h3>Exposição ética e regulatória</h3><p>Uso de tecnologia que toca o fluxo assistencial sem protocolo pode gerar questionamentos perante conselho profissional e autoridades.</p></article>
+      <article class="consequence"><i>03 / DADOS</i><h3>LGPD sem evidência suficiente</h3><p>Não basta existir uma política. É preciso demonstrar finalidade, acesso, fornecedor, proteção, retenção e resposta a incidentes.</p></article>
+      <article class="consequence"><i>04 / CONTRATOS</i><h3>Risco transferido por terceiros</h3><p>Cláusulas padrão podem deixar médico ou clínica responsáveis por fatos que dependem da plataforma, nuvem ou fornecedor de IA.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="layers" id="camadas">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Duas camadas complementares</div>
+      <h2>A metodologia revela a situação de risco. A advocacia define a resposta jurídica.</h2>
+      <p>São funções distintas, mas integradas: uma leitura organizada da operação e uma atuação jurídica especializada para prevenir, documentar, contratar, responder e defender.</p>
+    </div>
+    <div class="layers-grid">
+      <article class="layer brand-layer">
+        <span class="tag">Blank AI Risk · blank.com.br</span>
+        <h3>Metodologia de análise de situação de risco.</h3>
+        <p>A BLANK AI RISK é a camada metodológica e técnico-operacional. Ela organiza informações sobre IA, dados, processos, fornecedores, evidências e controles para tornar a exposição visível e priorizável.</p>
+        <ul>
+          <li>Diagnóstico de maturidade e exposição</li><li>Mapeamento de ferramentas, fluxos e terceiros</li><li>Identificação de riscos prioritários</li><li>Plano de ação 30-60-90 dias</li><li>Relatórios executivos e simulações</li>
+        </ul>
+        <div style="margin-top:20px"><a class="btn blank" href="https://blank.com.br/" target="_blank" rel="noopener">Visitar blank.com.br ↗</a></div>
+      </article>
+      <article class="layer">
+        <span class="tag">Dr. Marcelo Blank Advocacia · blank.adv.br</span>
+        <h3>Camada jurídica preventiva e contenciosa.</h3>
+        <p>O escritório usa os achados da operação para definir risco jurídico, responsabilidade, documentação, estratégia contratual e plano de proteção. Quando há incidente ou disputa, a mesma compreensão técnico-operacional melhora a leitura do caso e a construção da defesa.</p>
+        <ul>
+          <li>Pareceres, protocolos e documentação jurídica</li><li>Contratos com healthtechs, SaaS, IA e fornecedores</li><li>Estratégia em incidentes de dados e eventos críticos</li><li>Defesa em temas de IA, LGPD e saúde</li><li>Interface com compliance, TI, operação e direção clínica</li>
+        </ul>
+        <div style="margin-top:20px"><a class="btn primary" href="https://wa.me/5513991299921?text=Ol%C3%A1%2C%20quero%20conversar%20sobre%20uma%20situa%C3%A7%C3%A3o%20jur%C3%ADdica%20envolvendo%20IA%2C%20LGPD%2C%20dados%20ou%20tecnologia%20na%20%C3%A1rea%20da%20sa%C3%BAde." target="_blank" rel="noopener">Falar sobre o caso ↗</a></div>
+      </article>
+    </div>
+    <div class="bridge">
+      <div class="bridge-grid">
+        <div><div class="eyebrow" style="color:var(--teal)">Como isso se integra</div><h3>Risco mapeado vira decisão, documento e capacidade de resposta.</h3><p>Os resultados da análise orientam prioridades de contratos, políticas, consentimentos, prontuários, fornecedores, respostas a incidentes e defesas técnico-jurídicas. O resultado esperado é uma organização mais preparada para reduzir exposição, preservar evidências e responder a fatos críticos com coerência.</p></div>
+        <div><a class="btn dark" href="https://blank.com.br/" target="_blank" rel="noopener">Entender a metodologia BLANK AI RISK ↗</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="how-it-works" id="como-funciona">
+  <div class="wrap">
+    <div class="section-head compact-head">
+      <div class="eyebrow">Como funciona a atuação</div>
+      <h2>Da situação de risco à resposta jurídica.</h2>
+      <p>Uma jornada objetiva para transformar sinais dispersos de tecnologia, dados, contratos e operação em decisão, proteção e capacidade de defesa.</p>
+    </div>
+
+    <div class="process-grid">
+      <article class="process-step">
+        <div class="process-number">01</div>
+        <div>
+          <span class="process-label">Análise da situação</span>
+          <h3>Entender o que está acontecendo na operação.</h3>
+          <p>Leitura de ferramentas, dados, fluxos, fornecedores, documentos, comunicações e fatos relevantes. Quando adequado, a análise usa a metodologia BLANK AI RISK para organizar risco e priorização.</p>
+        </div>
+      </article>
+
+      <article class="process-step">
+        <div class="process-number">02</div>
+        <div>
+          <span class="process-label">Resposta jurídica</span>
+          <h3>Converter risco em orientação, documento e decisão.</h3>
+          <p>Definição de medidas jurídicas: contratos, consentimentos, políticas, protocolos, pareceres, notificações, matriz de responsabilidades e plano de ação 30-60-90 dias.</p>
+        </div>
+      </article>
+
+      <article class="process-step">
+        <div class="process-number">03</div>
+        <div>
+          <span class="process-label">Sustentação e defesa</span>
+          <h3>Manter a organização preparada para responder.</h3>
+          <p>Revisões, apoio a incidentes, atualização de documentos, suporte a novas tecnologias e defesa técnico-jurídica quando a tecnologia já está no centro do conflito.</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="process-cta">
+      <div>
+        <strong>O resultado esperado:</strong>
+        <span>menos improviso, mais prova de diligência e decisões jurídicas alinhadas à operação real.</span>
+      </div>
+      <a class="btn primary" href="#contato">Conversar sobre a situação ↗</a>
+    </div>
+  </div>
+</section>
+
+<section class="preventive" id="preventivo">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Atuação preventiva</div>
+      <h2>Prevenir não é acumular documentos. É reduzir exposição antes que ela vire evento.</h2>
+      <p>A atuação jurídica é estruturada a partir da realidade da clínica, consultório, hospital ou healthtech: o que usa, quem decide, que dado circula, quais terceiros participam e que prova pode ser produzida.</p>
+    </div>
+    <div class="practice-grid">
+      <article class="practice"><div class="num">01 / DIAGNÓSTICO JURÍDICO</div><h3>Leitura jurídica da situação de risco.</h3><p>Traduzimos riscos de operação, IA, dados, comunicação e fornecedores em consequências legais, prioridades e decisões que precisam de responsável.</p><div class="line"></div><small>Output: parecer inicial, prioridades e escopo de proteção.</small></article>
+      <article class="practice"><div class="num">02 / PLANO 30-60-90</div><h3>Roteiro de adequação que chega à execução.</h3><p>Com base na metodologia BLANK AI RISK, a advocacia organiza medidas jurídicas e operacionais em sequência: conter, formalizar, consolidar e provar.</p><div class="line"></div><small>Output: plano, responsáveis, documentos e evidências esperadas.</small></article>
+      <article class="practice"><div class="num">03 / SUSTENTAÇÃO</div><h3>Governança jurídica contínua.</h3><p>Revisão de contratos, novas ferramentas, incidentes, mudanças de fluxo, atualizações de política e suporte a decisões que não podem ser tomadas no improviso.</p><div class="line"></div><small>Output: documentação atualizada e melhor capacidade de resposta.</small></article>
+    </div>
+  </div>
+</section>
+
+<section class="contention" id="contencioso">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow" style="color:#8ae1dc">Atuação contenciosa</div>
+      <h2>Quando a tecnologia já está no centro do problema, a defesa precisa entender o sistema e o direito.</h2>
+      <p>O diferencial da advocacia boutique do Dr. Marcelo Blank é unir leitura jurídica, análise de documentos, compreensão de dados, fornecedores e fluxos digitais para atuar em discussões nas quais uma narrativa apenas jurídica costuma ser insuficiente.</p>
+    </div>
+    <div class="contention-grid">
+      <article class="case-card"><span>Responsabilidade em saúde</span><h3>Eventos assistenciais com prontuário digital, comunicação eletrônica ou tecnologia de apoio.</h3><p>Reconstrução de fatos, análise de documentos, mensagens, registros, protocolos, cadeia decisória, participação de sistemas e responsabilidade de cada envolvido.</p></article>
+      <article class="case-card"><span>IA e decisão humana</span><h3>Discussões em que a ferramenta influenciou triagem, documentação, atendimento, laudo ou recomendação.</h3><p>Leitura da relação entre ferramenta, profissional, fornecedor, revisão humana, registros e dano alegado para fundamentar estratégia técnica e jurídica.</p></article>
+      <article class="case-card"><span>LGPD e incidentes</span><h3>Vazamentos, acessos indevidos, uso inadequado de dados e falhas de fornecedor.</h3><p>Avaliação jurídica de fatos, contratos, evidências, comunicações, medidas de contenção, obrigações aplicáveis e posicionamento perante titulares e autoridades.</p></article>
+      <article class="case-card"><span>Contratos e tecnologia</span><h3>Conflitos com healthtechs, plataformas, desenvolvedores, operadoras e parceiros digitais.</h3><p>Discussões sobre responsabilidade, entrega, indisponibilidade, dados, auditoria, escopo, propriedade intelectual, cláusulas de limitação e obrigações de suporte.</p></article>
+    </div>
+  </div>
+</section>
+
+
+<section class="curriculum" id="curriculo">
+  <div class="wrap curriculum-grid">
+    <aside class="curriculum-card">
+      <div class="curriculum-photo">
+        <img src="assets/marcelo-blank-foto.png" alt="Dr. Marcelo Blank, advogado especialista em Direito Médico Digital, IA, LGPD e Direito Algorítmico">
+      </div>
+      <h3>Dr. Marcelo Blank</h3>
+      <div class="oab">OAB/SP 498.835</div>
+      <ul>
+        <li>Direito Médico Digital, Saúde Digital e LGPD</li>
+        <li>Direito Algorítmico, IA e Governança Digital</li>
+        <li>Formação em Análise de Sistemas</li>
+        <li>Experiência em tecnologia e mercados regulados</li>
+        <li>Atendimento nacional, remoto e presencial</li>
+      </ul>
+    </aside>
+
+    <div class="curriculum-copy">
+      <div class="eyebrow">Por que este escritório</div>
+      <h2>Direito, tecnologia e mercado regulado na mesma análise.</h2>
+      <h3>O advogado que entende a rotina clínica, a tecnologia por trás do sistema e a prova jurídica necessária para uma estratégia de defesa.</h3>
+      <p>O Dr. Marcelo Blank atua na interseção entre Direito Médico, saúde digital, LGPD, Direito Algorítmico, contratos de tecnologia, responsabilidade civil médica e governança de IA.</p>
+      <p>O foco não é implantar sistema, nem substituir o DPO. É transformar o uso de tecnologia em documentação jurídica defensável, contratos melhor estruturados, prevenção de riscos e capacidade real de resposta em situações críticas.</p>
+      <blockquote>“A saúde digital deslocou parte do risco médico para sistemas, dados, algoritmos, contratos e fornecedores. A clínica precisa de mais do que conformidade operacional: precisa de prova jurídica de diligência.”</blockquote>
+      <div class="credentials-highlight">
+        <a class="credential-highlight" href="https://marceloblank.substack.com/?utm_campaign=profile_chips" target="_blank" rel="noopener" aria-label="Ver publicações do Dr. Marcelo Blank no Substack">
+          <span class="credential-icon">◫</span>
+          <div><small>PUBLICAÇÕES E ANÁLISES</small><strong>Responsabilidade Civil, Software, LGPD e IA</strong><p>Artigos e análises do Dr. Marcelo Blank sobre responsabilidade civil, contratos de tecnologia, software e tendências regulatórias de IA.</p><em>Ver publicações no Substack ↗</em></div>
+        </a>
+        <a class="credential-highlight" href="https://www.linkedin.com/in/marceloblank/" target="_blank" rel="noopener" aria-label="Ver perfil do Dr. Marcelo Blank no LinkedIn">
+          <span class="credential-icon">◔</span>
+          <div><small>ARTIGOS, PESQUISA E ATUALIZAÇÕES</small><strong>Direito Médico Digital, Compliance e Governança Algorítmica</strong><p>Atualizações profissionais, análises de casos, pesquisa e posicionamentos sobre saúde digital, IA, LGPD e governança.</p><em>Ver perfil profissional no LinkedIn ↗</em></div>
+        </a>
+      </div>
+      <div class="keyword-pills">
+        <span>CFM nº 2.454/2026</span>
+        <span>LGPD · Dados de Saúde</span>
+        <span>SaMD · ANVISA</span>
+        <span>PL 2.338/2023 · IA</span>
+        <span>Responsabilidade Civil Médica</span>
+        <span>Contratos de Software Médico</span>
+        <span>RIPD · Compliance Digital</span>
+        <span>Defesa Ética CFM/CRM</span>
+        <span>Healthtechs</span>
+        <span>Planos de Saúde · ANS</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="situations" id="situacoes">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Situações que atendemos</div>
+      <h2>Quando tecnologia, cuidado e responsabilidade passam a se cruzar.</h2>
+      <p>Exemplos de situações em que a leitura jurídica precisa compreender sistemas, dados, pessoas, fornecedores e registros, sem exposição de clientes ou casos concretos.</p>
+    </div>
+    <div class="situations-grid">
+      <article class="situation-card">
+        <span>01 / CLÍNICA DIGITAL</span>
+        <h3>IA para transcrição, resumo ou apoio ao prontuário.</h3>
+        <p>Revisão de consentimento, fluxo de dados, papel do médico, evidência de revisão humana, contrato com fornecedor e riscos de prova assistencial.</p>
+      </article>
+      <article class="situation-card">
+        <span>02 / HEALTH TECH</span>
+        <h3>Produto de IA ou software clínico em expansão.</h3>
+        <p>Leitura de contratos, dados, linguagem comercial, responsabilidades, supervisão, ambiente regulado e preparação para parceiros ou investidores.</p>
+      </article>
+      <article class="situation-card">
+        <span>03 / INCIDENTE DE DADOS</span>
+        <h3>Falha de fornecedor, acesso indevido ou exposição de dados sensíveis.</h3>
+        <p>Análise de fatos, evidências, contratos, medidas de contenção, comunicações e estratégia jurídica proporcional ao evento.</p>
+      </article>
+      <article class="situation-card">
+        <span>04 / CONTENCIOSO</span>
+        <h3>Discussão sobre atendimento, prontuário ou decisão assistida por tecnologia.</h3>
+        <p>Reconstrução técnico-jurídica do caso, leitura de registros, mensagens, processos, sistemas e responsabilidades envolvidas.</p>
+      </article>
+      <article class="situation-card">
+        <span>05 / CONTRATOS</span>
+        <h3>Negociação com plataforma, SaaS, healthtech ou fornecedor de IA.</h3>
+        <p>Cláusulas de responsabilidade, logs, dados, segurança, incidentes, auditoria, continuidade, suporte e limitação de risco.</p>
+      </article>
+
+      <article class="situation-card">
+        <span>07 / PARCERIAS</span>
+        <h3>Escritórios e consultorias com clientes expostos a risco digital.</h3>
+        <p>Atuação complementar em diagnósticos, pareceres, contratos, incidentes, governança de IA, LGPD e estratégia técnico-jurídica para clientes compartilhados.</p>
+      </article>
+      <article class="situation-card">
+        <span>06 / GOVERNANÇA</span>
+        <h3>Organização precisa sair do improviso sem paralisar a inovação.</h3>
+        <p>Integração da metodologia BLANK AI RISK com documentos jurídicos, plano 30-60-90, responsáveis e evidências de diligência.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="faq">
+  <div class="wrap faq-grid">
+    <div class="faq-title"><div class="eyebrow">Perguntas frequentes</div><h2>O que precisa ser decidido antes da próxima ferramenta entrar em operação.</h2><p>IA e dados não devem impedir inovação. Devem ser tratados como parte de uma decisão jurídica, técnica e assistencial bem documentada.</p></div>
+    <div>
+      <details open><summary>A BLANK AI RISK substitui a advocacia?</summary><p>Não. A BLANK AI RISK é a metodologia de análise de situação de risco e de organização do plano de ação. A advocacia atua sobre as consequências jurídicas: responsabilidade, contratos, políticas, documentos, estratégias de resposta e defesa.</p></details>
+      <details><summary>O escritório trabalha apenas no preventivo?</summary><p>Não. O escritório atua preventivamente e no contencioso. A diferença é que o mesmo conhecimento da operação digital ajuda a construir defesas e estratégias em casos envolvendo IA, LGPD, dados, fornecedores e responsabilidade em saúde.</p></details>
+      <details><summary>Uma clínica pequena precisa de tudo isso?</summary><p>O escopo deve ser proporcional. Clínicas menores também podem ter exposição relevante se usam WhatsApp, prontuário eletrônico, telemedicina, transcrição, CRM ou ferramentas de IA. A análise define o que é prioritário e o que pode ser tratado em etapas.</p></details>
+      <details><summary>O diagnóstico gera certificação de conformidade?</summary><p>Não. O diagnóstico é uma leitura orientada por risco, baseada no escopo e nas evidências disponibilizadas. Ele direciona a atuação jurídica e pode apoiar processos de adequação, mas não substitui auditoria oficial ou validação regulatória específica.</p></details>
+    </div>
+  </div>
+</section>
+
+
+<section class="articles" id="artigos">
+  <div class="wrap articles-grid">
+    <div>
+      <div class="eyebrow">Conteúdo e atualização</div>
+      <h2>Artigos para quem precisa decidir antes de reagir.</h2>
+      <p>O Dr. Marcelo Blank escreve sobre Direito Médico Digital, IA, LGPD, responsabilidade profissional, contratos de tecnologia, dados sensíveis e governança em saúde.</p>
+      <p>Os conteúdos ajudam gestores, médicos, clínicas, hospitais, healthtechs e parceiros jurídicos a entender os problemas antes que se convertam em incidentes, conflitos ou passivos.</p>
+    </div>
+    <div class="article-cards">
+      <a class="article-card" href="https://marceloblank.substack.com/?utm_campaign=profile_chips" target="_blank" rel="noopener">
+        <span>SUBSTACK</span>
+        <h3>Direito Médico Digital, IA e Governança</h3>
+        <p>Artigos, análises e briefings sobre riscos jurídicos e operação digital em saúde.</p>
+        <b>Ler artigos no Substack ↗</b>
+      </a>
+      <a class="article-card" href="https://www.linkedin.com/in/marceloblank/" target="_blank" rel="noopener">
+        <span>LINKEDIN</span>
+        <h3>Dr. Marcelo Blank</h3>
+        <p>Atualizações profissionais, análises de casos, tendências e posicionamento sobre IA, LGPD e saúde digital.</p>
+        <b>Ver perfil no LinkedIn ↗</b>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<section class="partners" id="parcerias">
+  <div class="wrap partner-grid">
+    <div>
+      <div class="eyebrow">Parcerias profissionais</div>
+      <h2>Escritórios de advocacia e consultorias também podem contar com a atuação do Dr. Marcelo Blank.</h2>
+      <p>O escritório atua como camada técnica e jurídica especializada para parceiros que atendem clientes expostos a riscos de IA, LGPD, dados sensíveis, saúde digital, contratos de tecnologia, fornecedores e responsabilidade profissional.</p>
+      <p>A atuação pode ocorrer de forma complementar, em projeto conjunto, parecer especializado, apoio a negociação, diagnóstico técnico-jurídico, estruturação preventiva ou defesa de casos complexos.</p>
+    </div>
+    <div class="partner-panel">
+      <span class="partner-label">Como a parceria pode funcionar</span>
+      <div class="partner-item"><b>Para escritórios de advocacia</b><span>Complemento técnico-jurídico em IA, LGPD, saúde digital, contratos, prova e contencioso.</span></div>
+      <div class="partner-item"><b>Para consultorias e empresas de tecnologia</b><span>Camada jurídica para transformar diagnósticos, processos e controles em documentação defensável e estratégia de risco.</span></div>
+      <div class="partner-item"><b>Para clientes compartilhados</b><span>Atuação coordenada, preservando a relação comercial e o contexto do parceiro com o cliente final.</span></div>
+      <a class="btn primary" href="https://wa.me/5513991299921?text=Ol%C3%A1%2C%20quero%20conversar%20sobre%20uma%20parceria%20com%20o%20Dr.%20Marcelo%20Blank%20para%20atendimento%20de%20clientes%20do%20meu%20escrit%C3%B3rio%20ou%20consultoria." target="_blank" rel="noopener">Falar sobre parcerias ↗</a>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contato">
+  <div class="wrap contact-grid">
+    <div><div class="eyebrow" style="color:#8ae1dc">Contato</div><h2>Reduza exposição antes que o risco vire incidente, conflito ou processo.</h2><p>Atendimento nacional, remoto e presencial. A conversa inicial serve para entender operação, tecnologia, urgência, documentos existentes e a melhor forma de estruturar a atuação jurídica.</p><a class="btn primary" style="background:linear-gradient(135deg,#27c779,#1ea05f);box-shadow:none" href="https://wa.me/5513991299921?text=Ol%C3%A1%2C%20quero%20conversar%20sobre%20uma%20situa%C3%A7%C3%A3o%20jur%C3%ADdica%20envolvendo%20IA%2C%20LGPD%2C%20dados%20ou%20tecnologia%20na%20%C3%A1rea%20da%20sa%C3%BAde." target="_blank" rel="noopener">Iniciar pelo WhatsApp ↗</a></div>
+    <div class="contact-card">
+      <div class="contact-row"><div><small>WhatsApp</small><b>+55 13 99129-9921</b></div><a href="https://wa.me/5513991299921?text=Ol%C3%A1%2C%20quero%20conversar%20sobre%20uma%20situa%C3%A7%C3%A3o%20jur%C3%ADdica%20envolvendo%20IA%2C%20LGPD%2C%20dados%20ou%20tecnologia%20na%20%C3%A1rea%20da%20sa%C3%BAde." target="_blank" rel="noopener">Abrir conversa ↗</a></div>
+      <div class="contact-row"><div><small>E-mail</small><b>marcelo@blank.adv.br</b></div><a href="mailto:marcelo@blank.adv.br">Enviar e-mail ↗</a></div>
+      <div class="contact-row"><div><small>Metodologia de risco</small><b>BLANK AI RISK</b></div><a href="https://blank.com.br/" target="_blank" rel="noopener">Visitar blank.com.br ↗</a></div>
+      <div class="contact-row"><div><small>Atuação</small><b>Preventivo jurídico e contencioso</b></div><a href="#preventivo">Ver atuação ↗</a></div>
+      <div class="contact-row"><div><small>Artigos e análises</small><b>Substack · Direito Médico Digital, IA e Governança</b></div><a href="https://marceloblank.substack.com/?utm_campaign=profile_chips" target="_blank" rel="noopener">Ler artigos ↗</a></div>
+      <div class="contact-row"><div><small>Perfil profissional</small><b>LinkedIn · Dr. Marcelo Blank</b></div><a href="https://www.linkedin.com/in/marceloblank/" target="_blank" rel="noopener">Ver LinkedIn ↗</a></div>
+
+    </div>
+  </div>
+</section>
+</main>
+
+
+<footer>
+  <div class="wrap footer-main">
+    <div class="footer-brand">
+      <div class="footer-logo">MB</div>
+      <p>Advocacia boutique com foco em Direito Médico Digital, Compliance Digital, Direito Algorítmico, LGPD e segurança jurídica para médicos, clínicas e healthtechs.</p>
+    </div>
+
+    <div class="footer-col">
+      <h4>Atuação</h4>
+      <a href="#preventivo">Diagnóstico Jurídico de Saúde Digital</a>
+      <a href="#camadas">Governança Documental</a>
+      <a href="#contencioso">Healthtechs e Software em Saúde</a>
+      <a href="#contencioso">Defesa Médica e Litígios</a>
+    </div>
+
+    <div class="footer-col">
+      <h4>Conteúdo</h4>
+      <a href="https://marceloblank.substack.com/?utm_campaign=profile_chips" target="_blank" rel="noopener">Newsletter · Substack</a>
+      <a href="https://www.linkedin.com/in/marceloblank/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="#faq">Perguntas Frequentes</a>
+      <a href="#curriculo">Sobre o Dr. Marcelo Blank</a>
+    </div>
+
+    <div class="footer-col">
+      <h4>Contato</h4>
+      <a href="https://wa.me/5513991299921?text=Ol%C3%A1%2C%20quero%20conversar%20sobre%20uma%20situa%C3%A7%C3%A3o%20jur%C3%ADdica%20envolvendo%20IA%2C%20LGPD%2C%20dados%20ou%20tecnologia%20na%20%C3%A1rea%20da%20sa%C3%BAde." target="_blank" rel="noopener">(13) 99129-9921</a>
+      <a href="mailto:marcelo@blank.adv.br">marcelo@blank.adv.br</a>
+      <a href="https://blank.adv.br/">blank.adv.br</a>
+      <span>Santos/SP · Nacional</span>
+    </div>
+  </div>
+
+  <div class="wrap newsletter-footer">
+    <div>
+      <div class="eyebrow">Newsletter do Dr. Marcelo Blank</div>
+      <h3>Receba artigos sobre Direito Médico Digital, IA, LGPD e governança em saúde.</h3>
+      <p>Leituras para médicos, clínicas, hospitais, healthtechs, gestores e profissionais que precisam tomar decisões antes que o risco se transforme em incidente, conflito ou processo.</p>
+    </div>
+    <a class="newsletter-button" href="https://marceloblank.substack.com/?utm_campaign=profile_chips" target="_blank" rel="noopener">Assinar a newsletter no Substack ↗</a>
+  </div>
+
+  <div class="wrap footer-bottom">
+    <span>© 2026 Dr. Marcelo Blank Advocacia · OAB/SP 498.835 · Todos os direitos reservados</span>
+    <span>Direito Médico Digital · Compliance Digital · Direito Algorítmico · LGPD</span>
+  </div>
+</footer>
+
+<a class="wa" href="https://wa.me/5513991299921?text=Ol%C3%A1%2C%20quero%20conversar%20sobre%20uma%20situa%C3%A7%C3%A3o%20jur%C3%ADdica%20envolvendo%20IA%2C%20LGPD%2C%20dados%20ou%20tecnologia%20na%20%C3%A1rea%20da%20sa%C3%BAde." target="_blank" rel="noopener"><span class="wa-dot">◔</span><span>Falar no WhatsApp</span></a>
+<script>
+const btn=document.getElementById('menuBtn'), nav=document.getElementById('mobileNav');
+btn.addEventListener('click',()=>{nav.classList.toggle('open');btn.textContent=nav.classList.contains('open')?'×':'☰';});
+nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');btn.textContent='☰';}));
+</script>
+</body>
+</html>
