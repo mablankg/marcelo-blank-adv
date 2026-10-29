@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://blank.adv.br/sitemap.xml
+Sitemap: https://www.blank.adv.br/sitemap.xml
+

@@ -1,12 +1,17 @@
 {
-  "headers": [
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "outputDirectory": ".",
+  "trailingSlash": true,
+  "redirects": [
     {
-      "source": "/(.*).md",
-      "headers": [
-        { "key": "Content-Type", "value": "text/plain; charset=utf-8" },
-        { "key": "Access-Control-Allow-Origin", "value": "*" }
-      ]
+      "source": "/index.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/healthtechs.html",
+      "destination": "/assessoria-juridica-healthtechs/",
+      "permanent": true
     }
-  ],
-  "outputDirectory": "."
+  ]
 }
