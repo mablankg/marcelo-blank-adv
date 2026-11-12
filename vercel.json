@@ -12,6 +12,16 @@
       "source": "/healthtechs.html",
       "destination": "/assessoria-juridica-healthtechs/",
       "permanent": true
+    },
+    {
+      "source": "/flow",
+      "destination": "/assessoria-juridica/",
+      "permanent": true
+    },
+    {
+      "source": "/flow/:path*",
+      "destination": "/assessoria-juridica/",
+      "permanent": true
     }
   ]
 }
